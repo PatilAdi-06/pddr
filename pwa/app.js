@@ -73,5 +73,13 @@ function showProfile() { const p = state.profile; const dialog = document.queryS
 
 document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => { currentView = button.dataset.view; render(); }));
 document.querySelector('#profileButton').addEventListener('click', showProfile);
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js', { scope: './' }));
+}
+// Handle PWA shortcut deep-links via ?view= query param
+const urlParams = new URLSearchParams(window.location.search);
+const viewParam = urlParams.get('view');
+if (viewParam && ['today', 'plan', 'track', 'grocery', 'profile'].includes(viewParam)) {
+  currentView = viewParam;
+}
 render();
