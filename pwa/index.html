@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#176b52" />
+  <meta name="description" content="Personalized diet and daily routine recommendation system." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Daylight Wellness</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">P</div>
+      <div class="brand-copy"><strong>DAYLIGHT</strong><small>Personal wellness</small></div>
+      <span class="sync">● Offline ready</span>
+      <button class="avatar" id="profileButton" aria-label="Open profile">AS</button>
+    </header>
+
+    <section class="view" id="app"></section>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button class="nav-button active" data-view="today">Today</button>
+      <button class="nav-button" data-view="plan">Plan</button>
+      <button class="nav-button" data-view="track">Track</button>
+      <button class="nav-button" data-view="grocery">Grocery</button>
+      <button class="nav-button" data-view="profile">Profile</button>
+    </nav>
+  </main>
+  <dialog id="profileDialog"></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

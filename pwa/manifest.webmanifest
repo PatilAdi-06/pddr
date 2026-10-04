@@ -1,0 +1,15 @@
+{
+  "name": "Daylight Wellness",
+  "short_name": "Daylight",
+  "description": "Personalized diet and daily routine recommendation system.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f3",
+  "theme_color": "#176b52",
+  "orientation": "portrait-primary",
+  "categories": ["health", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.svg", "sizes": "192x192", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "icons/icon-512.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
