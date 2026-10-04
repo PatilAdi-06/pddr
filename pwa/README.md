@@ -19,9 +19,9 @@ Open `http://localhost:8080` in Chrome or Edge.
 
 1. Push the repository to GitHub.
 2. Open repository **Settings -> Pages**.
-3. Select **Deploy from a branch**.
-4. Select `main` and the folder containing the PWA files.
-5. If GitHub Pages serves the repository root, move or copy the contents of `pwa/` to the root or configure a Pages workflow.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Select the `gh-pages` branch and the `/ (root)` folder, then save.
+5. Open the **Actions** tab and run **Deploy Daylight PWA**.
 6. Wait for the HTTPS URL, for example:
 
 ```text
