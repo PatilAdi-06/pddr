@@ -1548,7 +1548,7 @@ function showMeal(meal) {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeMealBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">${esc(meal.type.toUpperCase())} · ${meal.time}</p>
       <h2>${esc(meal.name)}</h2>
       <b class="green-text">${meal.calories} kcal · ${meal.protein}g protein · ${meal.carbs || 45}g carbs</b>
@@ -1571,6 +1571,7 @@ function showMeal(meal) {
   `;
   dialog.showModal();
 
+  dialog.querySelector('#closeMealBtn')?.addEventListener('click', () => dialog.close());
   const swapBtn = dialog.querySelector('#dialogSwapBtn');
   if (swapBtn) {
     swapBtn.addEventListener('click', () => {
@@ -1584,7 +1585,7 @@ function showSnackLogger() {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeSnackBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">QUICK FOOD LOGGING</p>
       <h2>Log Extra Food or Snack</h2>
       <p>Select a common whole food item to add to your daily calories and protein totals.</p>
@@ -1600,6 +1601,8 @@ function showSnackLogger() {
     </form>
   `;
   dialog.showModal();
+
+  dialog.querySelector('#closeSnackBtn')?.addEventListener('click', () => dialog.close());
 
   dialog.querySelectorAll('[data-snack-idx]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -1622,7 +1625,7 @@ function showProfile() {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card profile-form">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeProfileBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">HEALTH PROFILE</p>
       <h2>Keep your plan personal</h2>
 
@@ -1686,9 +1689,13 @@ function showProfile() {
       </label>
 
       <button class="primary" type="submit">Update Health Profile & Plan</button>
+      <button type="button" class="secondary-btn" id="cancelProfileBtn">Cancel</button>
     </form>
   `;
   dialog.showModal();
+
+  dialog.querySelector('#closeProfileBtn')?.addEventListener('click', () => dialog.close());
+  dialog.querySelector('#cancelProfileBtn')?.addEventListener('click', () => dialog.close());
 
   dialog.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -1716,7 +1723,7 @@ function showAuthModal() {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card profile-form">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeAuthBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">AUTHENTICATION & ACCESS</p>
       <h2>${u.isLoggedIn ? (u.role === 'admin' ? '👑 Admin Session' : '👤 User Session') : 'Sign in to Daylight'}</h2>
 
@@ -1751,6 +1758,8 @@ function showAuthModal() {
     </form>
   `;
   dialog.showModal();
+
+  dialog.querySelector('#closeAuthBtn')?.addEventListener('click', () => dialog.close());
 
   const fillUserBtn = dialog.querySelector('#fillUserDemoBtn');
   if (fillUserBtn) {
@@ -1846,7 +1855,7 @@ function showAdminUserDetails(userId) {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeAuditXBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">USER AUDIT · ID #${user.id}</p>
       <h2>${esc(user.name)}</h2>
       <p style="color:var(--text-muted);">${esc(user.email)} · ${user.status}</p>
@@ -1870,6 +1879,7 @@ function showAdminUserDetails(userId) {
   `;
   dialog.showModal();
 
+  dialog.querySelector('#closeAuditXBtn')?.addEventListener('click', () => dialog.close());
   dialog.querySelector('#closeAuditBtn')?.addEventListener('click', () => dialog.close());
 }
 
@@ -1877,7 +1887,7 @@ function showAddRecipeModal() {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card profile-form" id="adminAddRecipeForm">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeAddRecipeBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">ADMIN RECIPE CATALOG</p>
       <h2>Add New Recipe</h2>
       <p>Publish a nutritionally balanced meal to the Daylight recommendation catalog.</p>
@@ -1923,9 +1933,19 @@ function showAddRecipeModal() {
       </label>
 
       <button class="primary" type="submit">+ Publish Recipe to Catalog</button>
+      <button type="button" class="secondary-btn" id="cancelAddRecipeBtn">Cancel / Discard</button>
     </form>
   `;
   dialog.showModal();
+
+  dialog.querySelector('#closeAddRecipeBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
+  dialog.querySelector('#cancelAddRecipeBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
 
   dialog.querySelector('#adminAddRecipeForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -1962,7 +1982,7 @@ function showApiKeyModal() {
   const dialog = document.querySelector('#profileDialog');
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card profile-form">
-      <button class="close">×</button>
+      <button type="button" class="close" id="closeKeyXBtn" aria-label="Close dialog">×</button>
       <p class="eyebrow">AI CONFIGURATION</p>
       <h2>Connect Live AI Models</h2>
       <p>Enter your Google Gemini or OpenAI API key. Leave blank to run Daylight's fast local recommendation engine.</p>
@@ -1977,6 +1997,7 @@ function showApiKeyModal() {
   `;
   dialog.showModal();
 
+  dialog.querySelector('#closeKeyXBtn')?.addEventListener('click', () => dialog.close());
   const saveKeyBtn = dialog.querySelector('#saveKeyBtn');
   if (saveKeyBtn) {
     saveKeyBtn.addEventListener('click', () => {
@@ -2265,7 +2286,17 @@ document.querySelector('#themeToggle')?.addEventListener('click', () => {
 });
 
 window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeAiChat();
+  if (e.key === 'Escape') {
+    closeAiChat();
+    document.querySelector('#profileDialog')?.close();
+  }
+});
+
+// Close profileDialog when clicking the backdrop
+document.querySelector('#profileDialog')?.addEventListener('click', (e) => {
+  if (e.target.id === 'profileDialog') {
+    document.querySelector('#profileDialog')?.close();
+  }
 });
 
 if ('serviceWorker' in navigator) {
