@@ -1148,6 +1148,7 @@ function bindActions() {
   // Navigation
   document.querySelectorAll('[data-view]').forEach((button) => {
     button.addEventListener('click', () => {
+      closeAiChat();
       currentView = button.dataset.view;
       render();
     });
@@ -1455,7 +1456,10 @@ function handleAction(action) {
   if (action === 'sleep-add') state.sleep = Math.min(24, Math.round((state.sleep + 1) * 10) / 10);
   if (action === 'sleep-sub') state.sleep = Math.max(0, Math.round((state.sleep - 1) * 10) / 10);
 
-  if (action === 'open-ai') openAiChat();
+  if (action === 'open-ai') {
+    openAiChat();
+    return;
+  }
   if (action === 'config-ai-key') showApiKeyModal();
   if (action === 'edit') showProfile();
   if (action === 'auth-modal') showAuthModal();
@@ -2002,22 +2006,26 @@ function showApiKeyModal() {
 // 🤖 AI WELLNESS CHAT ENGINE (Rule-based Fallback + Live Gemini/OpenAI API)
 // ----------------------------------------------------------------------------
 function openAiChat() {
-  const aiDialog = document.querySelector('#aiDialog');
-  if (!aiDialog) return;
+  const modal = document.querySelector('#aiModal');
+  if (!modal) return;
+
+  const container = modal.querySelector('.ai-modal-container');
+  if (!container) return;
 
   const keyToUse = state.customApiKey || AI_CONFIG.apiKey;
   const isLive = !!keyToUse;
 
-  aiDialog.innerHTML = `
+  // Build/Render modal content with full preserved chat history
+  container.innerHTML = `
     <header class="ai-chat-header">
       <div class="ai-header-info">
         <div class="ai-avatar">✨</div>
         <div>
-          <strong>Daylight AI Coach</strong>
+          <strong id="aiModalTitle">Daylight AI Coach</strong>
           <small>${isLive ? '🟢 Live Gemini Model' : '⚡ Local Wellness Engine (Offline)'}</small>
         </div>
       </div>
-      <button class="close" id="closeAiChat" style="color:#fff;background:rgba(255,255,255,0.2);">×</button>
+      <button class="close" id="closeAiChat" aria-label="Close AI Chat" style="color:#fff;background:rgba(255,255,255,0.2);">×</button>
     </header>
 
     ${!isLive ? `
@@ -2049,24 +2057,28 @@ function openAiChat() {
     </div>
   `;
 
-  aiDialog.showModal();
+  // Display overlay
+  modal.style.display = 'flex';
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
 
-  const msgContainer = aiDialog.querySelector('#aiChatMessages');
+  const msgContainer = modal.querySelector('#aiChatMessages');
   if (msgContainer) msgContainer.scrollTop = msgContainer.scrollHeight;
 
-  // Close
-  aiDialog.querySelector('#closeAiChat')?.addEventListener('click', () => aiDialog.close());
+  // Close actions
+  modal.querySelector('#closeAiChat')?.addEventListener('click', closeAiChat);
+  modal.querySelector('#aiModalBackdrop')?.addEventListener('click', closeAiChat);
 
-  // API Key link
-  aiDialog.querySelector('#addKeyFromChat')?.addEventListener('click', () => {
-    aiDialog.close();
+  // API Key modal
+  modal.querySelector('#addKeyFromChat')?.addEventListener('click', () => {
+    closeAiChat();
     showApiKeyModal();
   });
 
   // Prompt chips
-  aiDialog.querySelectorAll('[data-prompt]').forEach((chip) => {
+  modal.querySelectorAll('[data-prompt]').forEach((chip) => {
     chip.addEventListener('click', () => {
-      const input = aiDialog.querySelector('#aiChatInput');
+      const input = modal.querySelector('#aiChatInput');
       if (input) {
         input.value = chip.dataset.prompt;
         submitAiChat();
@@ -2075,10 +2087,23 @@ function openAiChat() {
   });
 
   // Send button & enter key
-  aiDialog.querySelector('#aiSendBtn')?.addEventListener('click', submitAiChat);
-  aiDialog.querySelector('#aiChatInput')?.addEventListener('keydown', (e) => {
+  modal.querySelector('#aiSendBtn')?.addEventListener('click', submitAiChat);
+  modal.querySelector('#aiChatInput')?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') submitAiChat();
   });
+
+  setTimeout(() => {
+    modal.querySelector('#aiChatInput')?.focus();
+  }, 80);
+}
+
+function closeAiChat() {
+  const modal = document.querySelector('#aiModal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+  }
 }
 
 async function submitAiChat() {
@@ -2237,6 +2262,10 @@ document.querySelector('#themeToggle')?.addEventListener('click', () => {
   state.theme = state.theme === 'dark' ? 'light' : 'dark';
   save();
   render();
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAiChat();
 });
 
 if ('serviceWorker' in navigator) {
