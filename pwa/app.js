@@ -274,7 +274,8 @@ const quickSnacks = [
 // Load persisted state or fallback
 let state = JSON.parse(localStorage.getItem('daylight-state-v3') || 'null') || structuredClone(defaultState);
 if (!state.adminUsers) state.adminUsers = structuredClone(defaultAdminUsers);
-let currentView = 'today';
+let currentView = state.user?.isLoggedIn ? 'today' : 'auth';
+let authTab = 'signin';
 let selectedGroceryFilter = 'All';
 const app = document.querySelector('#app');
 
@@ -396,11 +397,24 @@ function render() {
     track: renderTrack,
     grocery: renderGrocery,
     profile: renderProfile,
-    admin: renderAdmin
+    admin: renderAdmin,
+    auth: renderAuth
   };
 
   const adminNavBtn = document.querySelector('#adminNavBtn');
   const bottomNav = document.querySelector('#bottomNav');
+  const aiFab = document.querySelector('#aiFab');
+
+  if (bottomNav) {
+    if (currentView === 'auth') {
+      bottomNav.style.display = 'none';
+      if (aiFab) aiFab.style.display = 'none';
+    } else {
+      bottomNav.style.display = 'grid';
+      if (aiFab) aiFab.style.display = 'inline-flex';
+    }
+  }
+
   if (adminNavBtn && bottomNav) {
     if (state.user && state.user.role === 'admin') {
       adminNavBtn.style.display = 'block';
@@ -429,6 +443,12 @@ function updateTopbar() {
     themeBtn.textContent = state.theme === 'dark' ? '☀️' : '🌙';
   }
 
+  const logoutBtn = document.querySelector('#logoutBtnTopbar');
+  if (logoutBtn) {
+    logoutBtn.textContent = state.user?.isLoggedIn ? '🚪' : '🔑';
+    logoutBtn.title = state.user?.isLoggedIn ? 'Log out / Switch account' : 'Sign in / Register';
+  }
+
   const topbar = document.querySelector('.topbar');
   let adminPill = document.querySelector('#topbarAdminPill');
   if (state.user && state.user.role === 'admin') {
@@ -438,7 +458,7 @@ function updateTopbar() {
       adminPill.className = 'admin-pill';
       adminPill.textContent = '👑 Admin';
       adminPill.addEventListener('click', () => { currentView = 'admin'; render(); });
-      topbar.insertBefore(adminPill, document.querySelector('#profileButton'));
+      topbar.insertBefore(adminPill, document.querySelector('#logoutBtnTopbar') || document.querySelector('#profileButton'));
     }
   } else if (adminPill) {
     adminPill.remove();
@@ -846,7 +866,8 @@ function renderProfile() {
         <span>${esc(p.preference)} · ${esc(p.goal)} · ${esc(p.activity)} activity</span>
         <div class="profile-actions">
           <button data-action="edit">Edit health profile →</button>
-          <button data-action="auth-modal">Account settings →</button>
+          <button data-action="auth-modal">Switch account →</button>
+          <button data-action="logout" style="color:#d9534f;font-weight:700;">🚪 Log out</button>
         </div>
       </div>
     </section>
@@ -1027,6 +1048,105 @@ function renderAdmin() {
   `;
 }
 
+// 7. SIGN IN / REGISTER FULL SCREEN VIEW
+function renderAuth() {
+  return `
+    <div class="auth-view">
+      <div class="auth-hero">
+        <div class="brand-mark">P</div>
+        <h1>Daylight Wellness</h1>
+        <p class="subtle" style="margin-bottom:0;">Personalized Diet and Daily Routine Recommendation System (PDDR)</p>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab ${authTab === 'signin' ? 'active' : ''}" data-auth-tab="signin">Sign In</button>
+          <button class="auth-tab ${authTab === 'register' ? 'active' : ''}" data-auth-tab="register">Register / Sign Up</button>
+        </div>
+
+        ${authTab === 'signin' ? `
+          <div style="margin-bottom:14px;">
+            <small style="display:block;color:var(--text-muted);margin-bottom:8px;font-size:11px;font-weight:700;">QUICK DEMO CREDENTIALS</small>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button type="button" class="chip-btn" id="quickFillUser">👤 Demo User</button>
+              <button type="button" class="chip-btn" id="quickFillAdmin" style="background:#fbe8d5;color:#8e501b;">👑 Demo Admin (12345678)</button>
+            </div>
+          </div>
+
+          <form id="pageSignInForm" class="profile-form">
+            <label>Email address
+              <input type="email" id="pageEmail" placeholder="you@domain.com" value="user@daylight.app" required />
+            </label>
+
+            <label>Password
+              <input type="password" id="pagePassword" placeholder="••••••••" value="demo1234" required />
+            </label>
+
+            <button type="submit" class="primary" style="margin-top:14px;">Sign In to Daylight</button>
+            <button type="button" class="secondary-btn" data-action="guest-login">Continue as Guest User</button>
+          </form>
+        ` : `
+          <form id="pageRegisterForm" class="profile-form">
+            <label>Full Name
+              <input type="text" id="regName" placeholder="e.g. Adarsh Patil" required />
+            </label>
+
+            <label>Email Address
+              <input type="email" id="regEmail" placeholder="you@example.com" required />
+            </label>
+
+            <label>Create Password
+              <input type="password" id="regPassword" placeholder="At least 6 characters" minlength="6" required />
+            </label>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <label>Age (years)
+                <input type="number" id="regAge" placeholder="24" value="24" required />
+              </label>
+              <label>Gender
+                <select id="regGender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <label>Current Weight (kg)
+                <input type="number" id="regWeight" placeholder="68" value="68" required />
+              </label>
+              <label>Height (cm)
+                <input type="number" id="regHeight" placeholder="174" value="174" required />
+              </label>
+            </div>
+
+            <label>Health & Fitness Goal
+              <select id="regGoal">
+                <option value="Maintain">Maintain current weight</option>
+                <option value="Lose weight">Lose weight / Calorie deficit</option>
+                <option value="Gain muscle">Gain muscle / High protein</option>
+              </select>
+            </label>
+
+            <label>Dietary Preference
+              <select id="regPref">
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Eggetarian">Eggetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+              </select>
+            </label>
+
+            <button type="submit" class="primary" style="margin-top:14px;">Register & Create My Plan →</button>
+            <button type="button" class="secondary-btn" data-auth-tab="signin">Already registered? Sign In</button>
+          </form>
+        `}
+      </div>
+    </div>
+  `;
+}
+
 // ----------------------------------------------------------------------------
 // EVENT BINDINGS & ACTIONS
 // ----------------------------------------------------------------------------
@@ -1046,6 +1166,138 @@ function bindActions() {
       handleAction(button.dataset.action);
     });
   });
+
+  // Auth Tab Toggles
+  document.querySelectorAll('[data-auth-tab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      authTab = tab.dataset.authTab;
+      render();
+    });
+  });
+
+  // Quick Demo Autofill on Auth Page
+  const quickUser = document.querySelector('#quickFillUser');
+  if (quickUser) {
+    quickUser.addEventListener('click', () => {
+      const emailInput = document.querySelector('#pageEmail');
+      const passInput = document.querySelector('#pagePassword');
+      if (emailInput && passInput) {
+        emailInput.value = 'user@daylight.app';
+        passInput.value = 'demo1234';
+      }
+    });
+  }
+
+  const quickAdmin = document.querySelector('#quickFillAdmin');
+  if (quickAdmin) {
+    quickAdmin.addEventListener('click', () => {
+      const emailInput = document.querySelector('#pageEmail');
+      const passInput = document.querySelector('#pagePassword');
+      if (emailInput && passInput) {
+        emailInput.value = 'admin@daylight.com';
+        passInput.value = '12345678';
+      }
+    });
+  }
+
+  // Page Sign In Form Submit
+  const pageSignInForm = document.querySelector('#pageSignInForm');
+  if (pageSignInForm) {
+    pageSignInForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.querySelector('#pageEmail')?.value.trim() || '';
+      const pass = document.querySelector('#pagePassword')?.value || '';
+
+      if (email.toLowerCase() === 'admin@daylight.com') {
+        if (pass === '12345678') {
+          state.user = {
+            isLoggedIn: true,
+            name: 'System Administrator',
+            email: 'admin@daylight.com',
+            role: 'admin'
+          };
+          save();
+          currentView = 'admin';
+          alert('Welcome, System Administrator! Unlocked Admin Console.');
+          render();
+        } else {
+          alert('Invalid admin credentials! Please enter password: 12345678');
+        }
+      } else {
+        const name = email.split('@')[0] || 'Member';
+        state.user = {
+          isLoggedIn: true,
+          name,
+          email: email || 'user@daylight.app',
+          role: 'user'
+        };
+        state.profile.name = name;
+        save();
+        currentView = 'today';
+        render();
+      }
+    });
+  }
+
+  // Page Register Form Submit
+  const pageRegisterForm = document.querySelector('#pageRegisterForm');
+  if (pageRegisterForm) {
+    pageRegisterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.querySelector('#regName')?.value.trim() || 'New Member';
+      const email = document.querySelector('#regEmail')?.value.trim() || '';
+      const age = Number(document.querySelector('#regAge')?.value) || 24;
+      const gender = document.querySelector('#regGender')?.value || 'Male';
+      const weight = Number(document.querySelector('#regWeight')?.value) || 68;
+      const height = Number(document.querySelector('#regHeight')?.value) || 174;
+      const goal = document.querySelector('#regGoal')?.value || 'Maintain';
+      const preference = document.querySelector('#regPref')?.value || 'Vegetarian';
+
+      // 1. Set current user session
+      state.user = {
+        isLoggedIn: true,
+        name,
+        email,
+        role: 'user'
+      };
+
+      // 2. Update health profile
+      Object.assign(state.profile, {
+        name,
+        age,
+        gender,
+        weight,
+        height,
+        goal,
+        preference
+      });
+
+      // 3. Register user in admin directory
+      state.adminUsers = state.adminUsers || defaultAdminUsers;
+      state.adminUsers.unshift({
+        id: Date.now(),
+        name,
+        email,
+        role: 'Member',
+        age,
+        gender,
+        weight,
+        height,
+        goal,
+        preference,
+        calories: health().calories,
+        water: health().water,
+        score: 78,
+        status: 'Active',
+        allergies: 'None'
+      });
+
+      save();
+      currentView = 'today';
+      alert(`Welcome to Daylight, ${name}! Your personalized nutrition and routine plan is ready.`);
+      render();
+    });
+  }
 
   // Meal Detail Cards
   document.querySelectorAll('[data-meal]').forEach((button) => {
@@ -1186,6 +1438,21 @@ function handleAction(action) {
   if (action === 'log-snack') showSnackLogger();
   if (action === 'switch-user-view') { currentView = 'today'; render(); }
   if (action === 'open-add-recipe-modal') { showAddRecipeModal(); }
+
+  if (action === 'logout') {
+    state.user = { isLoggedIn: false, name: 'Guest', email: '', role: 'user' };
+    save();
+    currentView = 'auth';
+    authTab = 'signin';
+    render();
+  }
+
+  if (action === 'guest-login') {
+    state.user = { isLoggedIn: true, name: 'Guest User', email: 'guest@daylight.app', role: 'user' };
+    save();
+    currentView = 'today';
+    render();
+  }
 
   if (action === 'update-weight') {
     const input = document.querySelector('#quickWeightInput');

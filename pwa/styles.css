@@ -1432,3 +1432,64 @@ dialog::backdrop {
   grid-template-columns: repeat(6, 1fr);
 }
 
+/* Auth Screen Styling */
+.auth-view {
+  max-width: 480px;
+  margin: 10px auto 40px;
+  padding: 0 4px;
+}
+.auth-hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.auth-hero .brand-mark {
+  margin: 0 auto 12px;
+  width: 48px;
+  height: 48px;
+  font-size: 26px;
+}
+.auth-hero h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.auth-card {
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.auth-tabs {
+  display: flex;
+  background: var(--bg-app);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 20px;
+  gap: 4px;
+}
+.auth-tab {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.auth-tab.active {
+  background: var(--bg-card);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+.logout-topbar-btn {
+  color: #d9534f;
+  font-size: 15px;
+  transition: transform 0.15s ease;
+}
+.logout-topbar-btn:hover {
+  transform: scale(1.08);
+}
+
+
