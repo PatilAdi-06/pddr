@@ -25,13 +25,22 @@ const AI_CONFIG = {
 // ----------------------------------------------------------------------------
 // INITIAL STATE & DATA STORES
 // ----------------------------------------------------------------------------
+const defaultAdminUsers = [
+  { id: 1, name: 'Adarsh S', email: 'adarsh@daylight.app', role: 'Member', age: 24, gender: 'Male', weight: 68, height: 174, goal: 'Maintain', preference: 'Vegetarian', calories: 2050, water: 2380, score: 79, status: 'Active', allergies: 'None' },
+  { id: 2, name: 'Priya Sharma', email: 'priya.s@example.com', role: 'Member', age: 28, gender: 'Female', weight: 58, height: 162, goal: 'Lose weight', preference: 'Eggetarian', calories: 1620, water: 2050, score: 84, status: 'Active', allergies: 'Lactose intolerant' },
+  { id: 3, name: 'Rahul Verma', email: 'rahul.v@example.com', role: 'Member', age: 31, gender: 'Male', weight: 76, height: 178, goal: 'Gain muscle', preference: 'Non-Vegetarian', calories: 2450, water: 2650, score: 71, status: 'Active', allergies: 'None' },
+  { id: 4, name: 'Ananya Patel', email: 'ananya.p@example.com', role: 'Member', age: 22, gender: 'Female', weight: 52, height: 159, goal: 'Maintain', preference: 'Vegan', calories: 1780, water: 1820, score: 92, status: 'Active', allergies: 'Peanuts' },
+  { id: 5, name: 'Vikram Singh', email: 'vikram.s@example.com', role: 'Member', age: 35, gender: 'Male', weight: 82, height: 171, goal: 'Lose weight', preference: 'Vegetarian', calories: 1890, water: 2870, score: 68, status: 'Idle', allergies: 'Gluten sensitivity' }
+];
+
 const defaultState = {
   user: {
     isLoggedIn: true,
     name: 'Adarsh',
     email: 'adarsh@daylight.app',
-    role: 'Member'
+    role: 'user'
   },
+  adminUsers: defaultAdminUsers,
   profile: {
     name: 'Adarsh',
     age: 24,
@@ -264,6 +273,7 @@ const quickSnacks = [
 
 // Load persisted state or fallback
 let state = JSON.parse(localStorage.getItem('daylight-state-v3') || 'null') || structuredClone(defaultState);
+if (!state.adminUsers) state.adminUsers = structuredClone(defaultAdminUsers);
 let currentView = 'today';
 let selectedGroceryFilter = 'All';
 const app = document.querySelector('#app');
@@ -385,8 +395,21 @@ function render() {
     plan: renderPlan,
     track: renderTrack,
     grocery: renderGrocery,
-    profile: renderProfile
+    profile: renderProfile,
+    admin: renderAdmin
   };
+
+  const adminNavBtn = document.querySelector('#adminNavBtn');
+  const bottomNav = document.querySelector('#bottomNav');
+  if (adminNavBtn && bottomNav) {
+    if (state.user && state.user.role === 'admin') {
+      adminNavBtn.style.display = 'block';
+      bottomNav.classList.add('has-admin');
+    } else {
+      adminNavBtn.style.display = 'none';
+      bottomNav.classList.remove('has-admin');
+    }
+  }
 
   app.innerHTML = views[currentView] ? views[currentView]() : renderToday();
   document.querySelectorAll('.nav-button').forEach((button) => {
@@ -398,12 +421,27 @@ function render() {
 function updateTopbar() {
   const avatar = document.querySelector('#profileButton');
   if (avatar) {
-    const initials = state.profile.name ? state.profile.name.slice(0, 2).toUpperCase() : 'AS';
+    const initials = state.user?.role === 'admin' ? 'AD' : (state.profile.name ? state.profile.name.slice(0, 2).toUpperCase() : 'AS');
     avatar.textContent = initials;
   }
   const themeBtn = document.querySelector('#themeToggle');
   if (themeBtn) {
     themeBtn.textContent = state.theme === 'dark' ? '☀️' : '🌙';
+  }
+
+  const topbar = document.querySelector('.topbar');
+  let adminPill = document.querySelector('#topbarAdminPill');
+  if (state.user && state.user.role === 'admin') {
+    if (!adminPill && topbar) {
+      adminPill = document.createElement('button');
+      adminPill.id = 'topbarAdminPill';
+      adminPill.className = 'admin-pill';
+      adminPill.textContent = '👑 Admin';
+      adminPill.addEventListener('click', () => { currentView = 'admin'; render(); });
+      topbar.insertBefore(adminPill, document.querySelector('#profileButton'));
+    }
+  } else if (adminPill) {
+    adminPill.remove();
   }
 }
 
@@ -880,6 +918,115 @@ function renderProfile() {
   `;
 }
 
+// 6. ADMIN CONSOLE VIEW (For Administrator role)
+function renderAdmin() {
+  const users = state.adminUsers || defaultAdminUsers;
+  const activeCount = users.filter((u) => u.status === 'Active').length;
+  const avgScore = Math.round(users.reduce((acc, u) => acc + (u.score || 75), 0) / users.length);
+  const totalMeals = Object.values(mealCatalog).reduce((acc, list) => acc + list.length, 0);
+
+  return `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+      <p class="eyebrow" style="margin-bottom:0;">ADMINISTRATION CONSOLE</p>
+      <span class="admin-badge">👑 Super Admin</span>
+    </div>
+    <h1>System Dashboard</h1>
+    <p class="subtle">Monitor registered users, health analytics, and manage the nutrition catalog.</p>
+
+    <!-- Admin Overview Stat Grid -->
+    <div class="admin-stat-grid">
+      <div class="admin-stat-card">
+        <small>REGISTERED USERS</small>
+        <strong>${users.length}</strong>
+        <span>${activeCount} currently active</span>
+      </div>
+      <div class="admin-stat-card">
+        <small>AVG WELLNESS SCORE</small>
+        <strong>${avgScore}/100</strong>
+        <span>High system adherence</span>
+      </div>
+      <div class="admin-stat-card">
+        <small>FOOD CATALOG ITEMS</small>
+        <strong>${totalMeals} Recipes</strong>
+        <span>Across 5 daily meal slots</span>
+      </div>
+      <div class="admin-stat-card">
+        <small>RECOMMENDATION ENGINE</small>
+        <strong>Active</strong>
+        <span>Scikit-learn rules online</span>
+      </div>
+    </div>
+
+    <!-- Quick Role Switcher Bar -->
+    <div style="display:flex;gap:10px;margin-bottom:24px;">
+      <button class="chip-btn" data-action="switch-user-view" style="font-size:12px;padding:8px 14px;">👁️ View App as User</button>
+      <button class="chip-btn" data-action="open-add-recipe-modal" style="font-size:12px;padding:8px 14px;background:var(--primary);color:#fff;">+ Add New Recipe</button>
+      <button class="chip-btn" data-action="auth-modal" style="font-size:12px;padding:8px 14px;color:#d9534f;margin-left:auto;">🚪 Switch / Logout</button>
+    </div>
+
+    <!-- User Management Section -->
+    <div class="section-title">
+      <h2>Registered Users Directory (${users.length})</h2>
+      <span style="font-size:11px;color:var(--text-muted);">Tap user to view audit</span>
+    </div>
+
+    <div class="user-list">
+      ${users.map((u) => `
+        <div class="user-card" data-admin-user="${u.id}" role="button" tabindex="0">
+          <div class="user-card-header">
+            <div>
+              <strong>${esc(u.name)}</strong>
+              <small style="display:block;color:var(--text-muted);">${esc(u.email)}</small>
+            </div>
+            <span class="${u.status === 'Active' ? 'user-status-active' : 'user-status-idle'}">${u.status}</span>
+          </div>
+
+          <div class="user-meta-grid">
+            <div class="user-meta-item">
+              <span>Goal</span>
+              <b>${esc(u.goal)}</b>
+            </div>
+            <div class="user-meta-item">
+              <span>Target Cal</span>
+              <b>${u.calories} kcal</b>
+            </div>
+            <div class="user-meta-item">
+              <span>Score</span>
+              <b style="color:var(--primary);">${u.score}/100</b>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:11px;color:var(--text-muted);">
+            <span>${esc(u.gender)}, ${u.age}y · ${u.weight}kg · ${esc(u.preference)}</span>
+            <span style="color:var(--primary);font-weight:700;font-size:10px;">Inspect Details →</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    <!-- Recipe Catalog Management -->
+    <div class="section-title" style="margin-top:28px;">
+      <h2>Recipe Database Management</h2>
+      <button data-action="open-add-recipe-modal">+ Add Recipe</button>
+    </div>
+
+    <div class="recipe-admin-list">
+      ${Object.keys(mealCatalog).map((slot) => `
+        <h3 style="margin-top:14px;font-size:13px;color:var(--primary);">${slot.toUpperCase()} (${mealCatalog[slot].length})</h3>
+        ${mealCatalog[slot].map((recipe, rIdx) => `
+          <div class="recipe-admin-item">
+            <div>
+              <strong>${esc(recipe.name)}</strong>
+              <small>${recipe.calories} kcal · ${recipe.protein}g P · ${recipe.carbs || 45}g C · ${recipe.fats || 12}g F</small>
+            </div>
+            <button class="recipe-delete-btn" data-delete-slot="${slot}" data-delete-idx="${rIdx}" title="Delete recipe">✕ Delete</button>
+          </div>
+        `).join('')}
+      `).join('')}
+    </div>
+  `;
+}
+
 // ----------------------------------------------------------------------------
 // EVENT BINDINGS & ACTIONS
 // ----------------------------------------------------------------------------
@@ -995,6 +1142,29 @@ function bindActions() {
       save();
     });
   });
+
+  // Admin User Inspection Cards
+  document.querySelectorAll('[data-admin-user]').forEach((card) => {
+    card.addEventListener('click', () => {
+      showAdminUserDetails(card.dataset.adminUser);
+    });
+  });
+
+  // Admin Recipe Deletion
+  document.querySelectorAll('[data-delete-slot]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const slot = btn.dataset.deleteSlot;
+      const idx = Number(btn.dataset.deleteIdx);
+      if (mealCatalog[slot] && mealCatalog[slot][idx]) {
+        const item = mealCatalog[slot][idx];
+        if (confirm(`Remove "${item.name}" from ${slot} catalog?`)) {
+          mealCatalog[slot].splice(idx, 1);
+          render();
+        }
+      }
+    });
+  });
 }
 
 function handleAction(action) {
@@ -1014,6 +1184,8 @@ function handleAction(action) {
   if (action === 'edit') showProfile();
   if (action === 'auth-modal') showAuthModal();
   if (action === 'log-snack') showSnackLogger();
+  if (action === 'switch-user-view') { currentView = 'today'; render(); }
+  if (action === 'open-add-recipe-modal') { showAddRecipeModal(); }
 
   if (action === 'update-weight') {
     const input = document.querySelector('#quickWeightInput');
@@ -1250,22 +1422,34 @@ function showAuthModal() {
   dialog.innerHTML = `
     <form method="dialog" class="dialog-card profile-form">
       <button class="close">×</button>
-      <p class="eyebrow">USER AUTHENTICATION</p>
-      <h2>${u.isLoggedIn ? 'Account Session' : 'Sign in to Daylight'}</h2>
+      <p class="eyebrow">AUTHENTICATION & ACCESS</p>
+      <h2>${u.isLoggedIn ? (u.role === 'admin' ? '👑 Admin Session' : '👤 User Session') : 'Sign in to Daylight'}</h2>
 
       ${u.isLoggedIn ? `
         <div style="padding:14px;background:var(--bg-app);border-radius:12px;margin:10px 0;">
           <strong>Logged in as:</strong> ${esc(u.name || state.profile.name)}
-          <br><small style="color:var(--text-muted);">${esc(u.email || 'adarsh@daylight.app')}</small>
+          <br><small style="color:var(--text-muted);">${esc(u.email)}</small>
+          <br><span class="admin-badge" style="margin-top:6px;">Role: ${u.role === 'admin' ? '👑 System Administrator' : '👤 Member'}</span>
         </div>
-        <button type="button" class="secondary-btn" id="logoutBtn" style="color:#d9534f;">Log out / Switch User</button>
+        ${u.role === 'admin' ? `
+          <button type="button" class="primary" id="openAdminFromAuth" style="margin-top:0;">Open Admin Console</button>
+        ` : ''}
+        <button type="button" class="secondary-btn" id="logoutBtn" style="color:#d9534f;">Log out / Switch Account</button>
       ` : `
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Sign in as Member to track personal wellness, or as Administrator to manage system data.</p>
+        
+        <div style="display:flex;gap:6px;margin-bottom:12px;">
+          <button type="button" class="chip-btn" id="fillUserDemoBtn">👤 User Demo</button>
+          <button type="button" class="chip-btn" id="fillAdminDemoBtn" style="background:#fbe8d5;color:#8e501b;">👑 Admin Demo</button>
+        </div>
+
         <label>Email address
           <input type="email" id="authEmail" placeholder="you@domain.com" value="user@daylight.app" required />
         </label>
         <label>Password
           <input type="password" id="authPass" placeholder="••••••••" value="demo1234" required />
         </label>
+
         <button type="button" class="primary" id="loginBtn">Sign In</button>
         <button type="button" class="secondary-btn" id="guestBtn">Continue as Guest</button>
       `}
@@ -1273,12 +1457,38 @@ function showAuthModal() {
   `;
   dialog.showModal();
 
+  const fillUserBtn = dialog.querySelector('#fillUserDemoBtn');
+  if (fillUserBtn) {
+    fillUserBtn.addEventListener('click', () => {
+      dialog.querySelector('#authEmail').value = 'user@daylight.app';
+      dialog.querySelector('#authPass').value = 'demo1234';
+    });
+  }
+
+  const fillAdminBtn = dialog.querySelector('#fillAdminDemoBtn');
+  if (fillAdminBtn) {
+    fillAdminBtn.addEventListener('click', () => {
+      dialog.querySelector('#authEmail').value = 'admin@daylight.com';
+      dialog.querySelector('#authPass').value = '12345678';
+    });
+  }
+
+  const openAdminBtn = dialog.querySelector('#openAdminFromAuth');
+  if (openAdminBtn) {
+    openAdminBtn.addEventListener('click', () => {
+      currentView = 'admin';
+      dialog.close();
+      render();
+    });
+  }
+
   const logoutBtn = dialog.querySelector('#logoutBtn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
-      state.user = { isLoggedIn: false, name: 'Guest', email: '' };
+      state.user = { isLoggedIn: false, name: 'Guest', email: '', role: 'user' };
       save();
       dialog.close();
+      currentView = 'today';
       render();
     });
   }
@@ -1286,25 +1496,170 @@ function showAuthModal() {
   const loginBtn = dialog.querySelector('#loginBtn');
   if (loginBtn) {
     loginBtn.addEventListener('click', () => {
-      const email = dialog.querySelector('#authEmail')?.value || 'user@daylight.app';
-      const name = email.split('@')[0] || 'User';
-      state.user = { isLoggedIn: true, name, email };
-      state.profile.name = name;
-      save();
-      dialog.close();
-      render();
+      const email = dialog.querySelector('#authEmail')?.value.trim() || '';
+      const pass = dialog.querySelector('#authPass')?.value || '';
+
+      if (email.toLowerCase() === 'admin@daylight.com') {
+        if (pass === '12345678') {
+          state.user = {
+            isLoggedIn: true,
+            name: 'System Administrator',
+            email: 'admin@daylight.com',
+            role: 'admin'
+          };
+          save();
+          dialog.close();
+          currentView = 'admin';
+          alert('Welcome, System Administrator! Unlocked Admin Console.');
+          render();
+        } else {
+          alert('Invalid admin credentials! Please enter password: 12345678');
+        }
+      } else {
+        const name = email.split('@')[0] || 'Member';
+        state.user = {
+          isLoggedIn: true,
+          name,
+          email: email || 'user@daylight.app',
+          role: 'user'
+        };
+        state.profile.name = name;
+        save();
+        dialog.close();
+        currentView = 'today';
+        render();
+      }
     });
   }
 
   const guestBtn = dialog.querySelector('#guestBtn');
   if (guestBtn) {
     guestBtn.addEventListener('click', () => {
-      state.user = { isLoggedIn: true, name: 'Guest User', email: 'guest@daylight.app' };
+      state.user = { isLoggedIn: true, name: 'Guest User', email: 'guest@daylight.app', role: 'user' };
       save();
       dialog.close();
+      currentView = 'today';
       render();
     });
   }
+}
+
+function showAdminUserDetails(userId) {
+  const user = (state.adminUsers || defaultAdminUsers).find((u) => u.id === Number(userId));
+  if (!user) return;
+  const bmi = (user.weight / ((user.height / 100) ** 2)).toFixed(1);
+  const dialog = document.querySelector('#profileDialog');
+  dialog.innerHTML = `
+    <form method="dialog" class="dialog-card">
+      <button class="close">×</button>
+      <p class="eyebrow">USER AUDIT · ID #${user.id}</p>
+      <h2>${esc(user.name)}</h2>
+      <p style="color:var(--text-muted);">${esc(user.email)} · ${user.status}</p>
+
+      <div class="metrics" style="margin:14px 0;">
+        <article class="metric mint"><small>WEIGHT</small><strong>${user.weight} <em>kg</em></strong><span>Height: ${user.height} cm</span></article>
+        <article class="metric peach"><small>CALORIES</small><strong>${user.calories} <em>kcal</em></strong><span>Goal: ${esc(user.goal)}</span></article>
+        <article class="metric blue"><small>BMI</small><strong>${bmi} <em>kg/m²</em></strong><span>Score: ${user.score}/100</span></article>
+      </div>
+
+      <h3>Diet & Routine Profile</h3>
+      <p>
+        <strong>Food Preference:</strong> ${esc(user.preference)}<br>
+        <strong>Allergies / Restrictions:</strong> ${esc(user.allergies || 'None')}<br>
+        <strong>Water Target:</strong> ${user.water} ml / day<br>
+        <strong>Habit Compliance Score:</strong> ${user.score}/100
+      </p>
+
+      <button type="button" class="secondary-btn" id="closeAuditBtn">Close Audit</button>
+    </form>
+  `;
+  dialog.showModal();
+
+  dialog.querySelector('#closeAuditBtn')?.addEventListener('click', () => dialog.close());
+}
+
+function showAddRecipeModal() {
+  const dialog = document.querySelector('#profileDialog');
+  dialog.innerHTML = `
+    <form method="dialog" class="dialog-card profile-form" id="adminAddRecipeForm">
+      <button class="close">×</button>
+      <p class="eyebrow">ADMIN RECIPE CATALOG</p>
+      <h2>Add New Recipe</h2>
+      <p>Publish a nutritionally balanced meal to the Daylight recommendation catalog.</p>
+
+      <label>Meal Slot
+        <select name="mealSlot" required>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Mid-morning">Mid-morning</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Evening snack">Evening snack</option>
+          <option value="Dinner">Dinner</option>
+        </select>
+      </label>
+
+      <label>Recipe Name
+        <input name="recipeName" placeholder="e.g. Sautéed Paneer & Broccoli Salad" required />
+      </label>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <label>Calories (kcal)
+          <input name="calories" type="number" placeholder="450" required />
+        </label>
+        <label>Protein (g)
+          <input name="protein" type="number" placeholder="25" required />
+        </label>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <label>Carbs (g)
+          <input name="carbs" type="number" placeholder="45" value="45" />
+        </label>
+        <label>Fats (g)
+          <input name="fats" type="number" placeholder="14" value="14" />
+        </label>
+      </div>
+
+      <label>Ingredients (comma separated)
+        <input name="ingredients" placeholder="Paneer, Broccoli, Olive oil, Pepper" required />
+      </label>
+
+      <label>Preparation Method
+        <textarea name="recipe" rows="3" style="padding:10px;border:1px solid var(--border-card);border-radius:8px;background:var(--bg-app);font-family:inherit;font-size:12px;" placeholder="Brief cooking instructions..." required></textarea>
+      </label>
+
+      <button class="primary" type="submit">+ Publish Recipe to Catalog</button>
+    </form>
+  `;
+  dialog.showModal();
+
+  dialog.querySelector('#adminAddRecipeForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const slot = form.get('mealSlot');
+    const name = form.get('recipeName')?.toString().trim();
+    const calories = Number(form.get('calories'));
+    const protein = Number(form.get('protein'));
+    const carbs = Number(form.get('carbs')) || 40;
+    const fats = Number(form.get('fats')) || 12;
+    const ingredients = form.get('ingredients')?.toString().split(',').map((s) => s.trim()).filter(Boolean) || [];
+    const recipe = form.get('recipe')?.toString().trim();
+
+    if (slot && name && calories && mealCatalog[slot]) {
+      mealCatalog[slot].push({
+        name,
+        calories,
+        protein,
+        carbs,
+        fats,
+        ingredients,
+        recipe,
+        swaps: ['Standard nutrition swap', 'Balanced dietary choice']
+      });
+      dialog.close();
+      alert(`Success! "${name}" added to ${slot} catalog.`);
+      render();
+    }
+  });
 }
 
 function showApiKeyModal() {

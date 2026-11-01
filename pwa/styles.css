@@ -1296,3 +1296,139 @@ dialog::backdrop {
   .split { grid-template-columns: 1fr; }
   .track-actions button, .card-actions button { padding: 5px 8px; font-size: 9px; }
 }
+
+/* Admin Console Styling */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fbe8d5;
+  color: #8e501b;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+[data-theme="dark"] .admin-badge {
+  background: #3a2b1c;
+  color: #f6be8a;
+}
+.admin-pill {
+  cursor: pointer;
+  background: #e59a42;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+.admin-stat-card {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.admin-stat-card small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--text-muted);
+}
+.admin-stat-card strong {
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--primary);
+}
+.admin-stat-card span {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.user-card {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.user-card:hover {
+  border-color: var(--primary);
+}
+.user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-card-header strong {
+  font-size: 14px;
+}
+.user-card-header span {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+.user-status-active {
+  background: var(--mint-bg);
+  color: var(--mint-text);
+}
+.user-status-idle {
+  background: var(--peach-bg);
+  color: var(--peach-text);
+}
+.user-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.user-meta-item b {
+  display: block;
+  color: var(--text-main);
+  font-size: 12px;
+}
+.recipe-admin-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+.recipe-admin-item div strong {
+  display: block;
+  font-size: 13px;
+}
+.recipe-admin-item div small {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+.recipe-delete-btn {
+  color: #d9534f;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+.bottom-nav.has-admin {
+  grid-template-columns: repeat(6, 1fr);
+}
+
