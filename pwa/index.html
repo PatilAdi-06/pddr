@@ -16,10 +16,17 @@
       <div class="brand-mark">P</div>
       <div class="brand-copy"><strong>DAYLIGHT</strong><small>Personal wellness</small></div>
       <span class="sync">● Offline ready</span>
-      <button class="avatar" id="profileButton" aria-label="Open profile">AS</button>
+      <button class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+      <button class="avatar" id="profileButton" aria-label="Open profile and account">AS</button>
     </header>
 
     <section class="view" id="app"></section>
+
+    <!-- Floating AI Wellness Assistant Trigger -->
+    <button class="ai-fab" id="aiFab" aria-label="Open AI Wellness Assistant" title="Chat with Daylight AI Coach">
+      <span class="ai-fab-icon">✨</span>
+      <span class="ai-fab-text">AI Coach</span>
+    </button>
 
     <nav class="bottom-nav" aria-label="Primary navigation">
       <button class="nav-button active" data-view="today">Today</button>
@@ -29,7 +36,13 @@
       <button class="nav-button" data-view="profile">Profile</button>
     </nav>
   </main>
+
+  <!-- Profile, Auth & Action Dialog -->
   <dialog id="profileDialog"></dialog>
+
+  <!-- AI Wellness Assistant Chat Dialog -->
+  <dialog id="aiDialog" class="ai-dialog-modal"></dialog>
+
   <script src="app.js"></script>
 </body>
 </html>
