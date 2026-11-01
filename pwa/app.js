@@ -626,6 +626,18 @@ function renderTrack() {
   const currentScore = score();
   const routine = state.routineDone || {};
 
+  const routineItems = [
+    { key: 'wake', time: '07:00 AM', title: 'Wake up & 500 ml Warm Water', desc: 'Hydrate and kickstart digestion' },
+    { key: 'breakfast', time: '08:00 AM', title: 'Nutritious Breakfast & Focus', desc: 'Complex carbs and 20g+ protein' },
+    { key: 'midHydrate', time: '11:00 AM', title: 'Mid-day Hydration & Light Stretch', desc: 'Posture check, green tea or seasonal fruit' },
+    { key: 'lunch', time: '01:30 PM', title: 'Balanced Lunch & 10-Min Walk', desc: 'Fiber, greens, protein, and light movement' },
+    { key: 'workout', time: '05:30 PM', title: '30-Min Workout / Brisk Walk', desc: 'Resistance training or aerobic exercise' },
+    { key: 'dinner', time: '08:00 PM', title: 'Light Dinner (2+ hours before bed)', desc: 'Gentle on digestion, whole grains & lentils' },
+    { key: 'sleepRoutine', time: '10:30 PM', title: 'Screen-off & Restorative Sleep', desc: 'Cool room temperature, target 7–8 hours' }
+  ];
+  const completedRoutineCount = routineItems.filter((i) => !!routine[i.key]).length;
+  const completedMealCount = ['Breakfast', 'Lunch', 'Dinner'].filter((m) => !!state.mealsDone[m]).length;
+
   return `
     <p class="eyebrow">HABIT & ROUTINE MOMENTUM</p>
     <h1>Small habits, visible progress.</h1>
@@ -697,97 +709,74 @@ function renderTrack() {
     <!-- Daily Routine Timeline (The "Daily Routine" half of PDDR) -->
     <section class="timeline-section">
       <div class="section-title">
-        <h2>Daily Routine Schedule</h2>
-        <span style="font-size:11px;color:var(--text-muted);">${Object.values(routine).filter(Boolean).length}/8 Completed</span>
+        <div>
+          <h2>Daily Routine Schedule</h2>
+          <p class="subtle" style="margin-bottom:0;font-size:12px;">Evidence-based circadian habits for energy, digestion & recovery.</p>
+        </div>
+        <span class="adherence-badge">${completedRoutineCount} / ${routineItems.length} Done</span>
       </div>
       <div class="timeline">
-        <div class="timeline-item ${routine.wake ? 'done' : ''}">
-          <span class="timeline-time">07:00 AM</span>
-          <div class="timeline-content">
-            <strong>Wake up & 500 ml Warm Water</strong>
-            <small>Hydrate and kickstart digestion</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="wake" ${routine.wake ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.breakfast ? 'done' : ''}">
-          <span class="timeline-time">08:00 AM</span>
-          <div class="timeline-content">
-            <strong>Nutritious Breakfast & Focus</strong>
-            <small>Complex carbs and 20g+ protein</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="breakfast" ${routine.breakfast ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.midHydrate ? 'done' : ''}">
-          <span class="timeline-time">11:00 AM</span>
-          <div class="timeline-content">
-            <strong>Mid-day Hydration & Light Stretch</strong>
-            <small>Posture check, green tea or seasonal fruit</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="midHydrate" ${routine.midHydrate ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.lunch ? 'done' : ''}">
-          <span class="timeline-time">01:30 PM</span>
-          <div class="timeline-content">
-            <strong>Balanced Lunch & 10-Min Walk</strong>
-            <small>Fiber, greens, protein, and light movement</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="lunch" ${routine.lunch ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.workout ? 'done' : ''}">
-          <span class="timeline-time">05:30 PM</span>
-          <div class="timeline-content">
-            <strong>30-Min Workout / Brisk Walk</strong>
-            <small>Resistance training or aerobic exercise</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="workout" ${routine.workout ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.dinner ? 'done' : ''}">
-          <span class="timeline-time">08:00 PM</span>
-          <div class="timeline-content">
-            <strong>Light Dinner (2+ hours before bed)</strong>
-            <small>Gentle on digestion, whole grains & lentils</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="dinner" ${routine.dinner ? 'checked' : ''} />
-          </label>
-        </div>
-
-        <div class="timeline-item ${routine.sleepRoutine ? 'done' : ''}">
-          <span class="timeline-time">10:30 PM</span>
-          <div class="timeline-content">
-            <strong>Screen-off & Restorative Sleep</strong>
-            <small>Cool room temperature, target 7–8 hours</small>
-          </div>
-          <label class="timeline-check">
-            <input type="checkbox" data-routine="sleepRoutine" ${routine.sleepRoutine ? 'checked' : ''} />
-          </label>
-        </div>
+        ${routineItems.map((item) => {
+          const isDone = !!routine[item.key];
+          return `
+            <div class="timeline-item ${isDone ? 'done' : ''}" data-routine-item="${item.key}">
+              <span class="timeline-time">${item.time}</span>
+              <div class="timeline-content">
+                <strong>${item.title}</strong>
+                <small>${item.desc}</small>
+              </div>
+              <label class="custom-checkbox timeline-check">
+                <input type="checkbox" data-routine="${item.key}" ${isDone ? 'checked' : ''} aria-label="Mark ${item.title} completed" />
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6.5-6.5"/></svg>
+                </span>
+              </label>
+            </div>
+          `;
+        }).join('')}
       </div>
     </section>
 
-    <!-- Meal Adherence Checkboxes -->
-    <h3 class="label">MAIN MEAL ADHERENCE</h3>
-    ${['Breakfast', 'Lunch', 'Dinner'].map((meal) => `
-      <label class="check">
-        <input type="checkbox" data-meal-check="${meal}" ${state.mealsDone[meal] ? 'checked' : ''}>
-        ${meal} completed (+15 wellness score)
-      </label>
-    `).join('')}
+    <!-- Main Meal Adherence Section -->
+    <section class="meal-adherence-section">
+      <div class="section-title">
+        <div>
+          <h2>Main Meal Adherence</h2>
+          <p class="subtle" style="margin-bottom:0;font-size:12px;">Log scheduled meals to maintain metabolic rate and earn wellness points.</p>
+        </div>
+        <span class="adherence-badge">${completedMealCount} / 3 Logged</span>
+      </div>
+
+      <div class="meal-adherence-grid">
+        ${[
+          { key: 'Breakfast', name: 'Breakfast', icon: '🥣', desc: 'Kickstart metabolic energy & focus' },
+          { key: 'Lunch', name: 'Lunch', icon: '🥗', desc: 'Midday fiber & sustained afternoon stamina' },
+          { key: 'Dinner', name: 'Dinner', icon: '🍲', desc: 'Gentle on digestion, restorative rest' }
+        ].map((item) => {
+          const isDone = !!state.mealsDone[item.key];
+          return `
+            <div class="adherence-card ${isDone ? 'completed' : ''}" data-meal-card="${item.key}">
+              <div class="adherence-card-left">
+                <span class="adherence-icon">${item.icon}</span>
+                <div class="adherence-info">
+                  <strong>${item.name}</strong>
+                  <small>${item.desc}</small>
+                </div>
+              </div>
+              <div class="adherence-card-right">
+                <span class="pts-pill ${isDone ? 'pts-active' : ''}">+15 pts</span>
+                <label class="custom-checkbox">
+                  <input type="checkbox" data-meal-check="${item.key}" ${isDone ? 'checked' : ''} aria-label="Mark ${item.name} completed" />
+                  <span class="custom-check-box">
+                    <svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6.5-6.5"/></svg>
+                  </span>
+                </label>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </section>
   `;
 }
 
@@ -828,14 +817,19 @@ function renderGrocery() {
       ${filteredGroceries.map((item) => {
         const globalIndex = state.groceries.indexOf(item);
         return `
-          <label class="grocery ${item.purchased ? 'purchased' : ''}">
-            <input type="checkbox" data-grocery="${globalIndex}" ${item.purchased ? 'checked' : ''}>
-            <span>
+          <div class="grocery ${item.purchased ? 'purchased' : ''}" data-grocery-card="${globalIndex}">
+            <label class="custom-checkbox">
+              <input type="checkbox" data-grocery="${globalIndex}" ${item.purchased ? 'checked' : ''} aria-label="Mark ${esc(item.name)} purchased">
+              <span class="custom-check-box">
+                <svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6.5-6.5"/></svg>
+              </span>
+            </label>
+            <span class="grocery-title">
               <b>${esc(item.name)}</b>
               <small>${esc(item.quantity || '')}</small>
             </span>
             <span class="grocery-tag">${esc(item.category || 'Pantry')}</span>
-          </label>
+          </div>
         `;
       }).join('')}
     </div>
@@ -1316,7 +1310,7 @@ function bindActions() {
     });
   });
 
-  // Routine Checkboxes
+  // Routine Checkboxes & Card Clicks
   document.querySelectorAll('[data-routine]').forEach((input) => {
     input.addEventListener('change', () => {
       state.routineDone = state.routineDone || {};
@@ -1325,8 +1319,18 @@ function bindActions() {
       render();
     });
   });
+  document.querySelectorAll('[data-routine-item]').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      if (e.target.closest('.custom-checkbox') || e.target.tagName === 'INPUT') return;
+      const key = item.dataset.routineItem;
+      state.routineDone = state.routineDone || {};
+      state.routineDone[key] = !state.routineDone[key];
+      save();
+      render();
+    });
+  });
 
-  // Meal Adherence Checkboxes
+  // Meal Adherence Checkboxes & Card Clicks
   document.querySelectorAll('[data-meal-check]').forEach((input) => {
     input.addEventListener('change', () => {
       state.mealsDone[input.dataset.mealCheck] = input.checked;
@@ -1334,13 +1338,33 @@ function bindActions() {
       render();
     });
   });
+  document.querySelectorAll('[data-meal-card]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.custom-checkbox') || e.target.tagName === 'INPUT') return;
+      const key = card.dataset.mealCard;
+      state.mealsDone[key] = !state.mealsDone[key];
+      save();
+      render();
+    });
+  });
 
-  // Grocery Checkboxes
+  // Grocery Checkboxes & Row Clicks
   document.querySelectorAll('[data-grocery]').forEach((input) => {
     input.addEventListener('change', () => {
       const idx = Number(input.dataset.grocery);
       if (state.groceries[idx]) {
         state.groceries[idx].purchased = input.checked;
+        save();
+        render();
+      }
+    });
+  });
+  document.querySelectorAll('[data-grocery-card]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.custom-checkbox') || e.target.tagName === 'INPUT') return;
+      const idx = Number(card.dataset.groceryCard);
+      if (state.groceries[idx]) {
+        state.groceries[idx].purchased = !state.groceries[idx].purchased;
         save();
         render();
       }
