@@ -1,4 +1,4 @@
-const CACHE_NAME = 'daylight-v50';
+const CACHE_NAME = 'daylight-v51';
 const APP_SHELL = [
   './',
   './index.html',

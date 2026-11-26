@@ -127,9 +127,9 @@ async function testCalorieProgressLogic() {
     'renderPlan() preserves separate actual consumed and remaining calorie display'
   );
 
-  // Verify cache version bumped to v50
-  assert(indexHtml.includes('app.js?v=50'), 'pwa/index.html includes app.js?v=50');
-  assert(swJs.includes("CACHE_NAME = 'daylight-v50'"), 'pwa/sw.js sets CACHE_NAME to daylight-v50');
+  // Verify cache version bumped to v51
+  assert(indexHtml.includes('app.js?v=51'), 'pwa/index.html includes app.js?v=51');
+  assert(swJs.includes("CACHE_NAME = 'daylight-v51'"), 'pwa/sw.js sets CACHE_NAME to daylight-v51');
 
   // --- SUITE 4: Live Server & Database Health ---
   console.log('\n--- SUITE 4: Live Server & Database Status ---');

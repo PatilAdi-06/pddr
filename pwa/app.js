@@ -131,16 +131,23 @@ const API_BASE = '/api';
 
 async function apiRequest(path, options = {}) {
   try {
+    const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
+    if (session && session.token) {
+      headers['Authorization'] = `Bearer ${session.token}`;
+      headers['x-session-token'] = session.token;
+    }
     const response = await fetch(`${API_BASE}${path}`, {
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+      headers,
       ...options
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok) {
-      if (response.status === 401 && session && path !== '/auth/login' && path !== '/auth/register') {
-        console.warn('Session expired or unauthorized. Signing out.');
-        signOut();
+      if (response.status === 401 && session && path !== '/auth/login' && path !== '/auth/register' && path !== '/auth/change-password' && path !== '/me') {
+        if (session.token) {
+          console.warn('Session expired or unauthorized. Signing out.');
+          signOut();
+        }
       }
       return { _failed: true, status: response.status, error: result.error || `API request failed (${response.status})` };
     }
@@ -182,9 +189,9 @@ async function useDatabaseSession(email, password, expectedRole = null) {
   });
   if (!loggedIn?.id) return null;
   if (expectedRole && loggedIn.role !== expectedRole) return null;
-  const profile = await apiRequest('/me');
-  session = { userId: loggedIn.id, role: loggedIn.role };
+  session = { userId: loggedIn.id, role: loggedIn.role, token: loggedIn.token || '' };
   writeSession(session);
+  const profile = await apiRequest('/me');
   if (loggedIn.role === 'user') {
     state = loadUserState(loggedIn.id);
     if (profile) {

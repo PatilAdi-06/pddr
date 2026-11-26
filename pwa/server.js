@@ -29,11 +29,19 @@ process.on('unhandledRejection', (reason) => {
 });
 
 const server = http.createServer((req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-session-token, X-Requested-With, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   if (req.url.startsWith('/api/')) {
     if (req.method === 'OPTIONS') {
-      res.writeHead(204, { 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'GET,POST,PUT,PATCH,DELETE,OPTIONS' });
+      res.writeHead(204);
       return res.end();
     }
     Promise.resolve(apiRoute(req, res)).catch((err) => {
@@ -191,21 +199,112 @@ async function autoMigrate() {
       console.warn('[Database] Food seeding notice:', e.message);
     }
 
-    // 3. Ensure default admin user exists
+    // 3. Ensure default admin users exist
     try {
-      const adminCount = await client.query("SELECT COUNT(*) FROM users WHERE role = 'admin'");
-      if (parseInt(adminCount.rows[0].count, 10) === 0) {
-        const crypto = require('crypto');
+      const crypto = require('crypto');
+      const hashAdminPass = (pwd) => {
         const salt = crypto.randomBytes(16).toString('hex');
-        const hash = `${salt}:${crypto.scryptSync('Password123!', salt, 64).toString('hex')}`;
-        await client.query(`INSERT INTO users (id, email, name, password_hash, role, status)
-          VALUES ($1, $2, $3, $4, 'admin', 'active')
-          ON CONFLICT (email) DO NOTHING`,
-          [crypto.randomUUID(), 'admin@daylight.local', 'Daylight Admin', hash]);
-        console.log('[Database] Default admin account initialized: admin@daylight.local / Password123!');
+        return `${salt}:${crypto.scryptSync(pwd, salt, 64).toString('hex')}`;
+      };
+      const defaultAdmins = [
+        { email: 'admin@daylight.local', name: 'Daylight Admin' },
+        { email: 'admin@example.com', name: 'PDDR Admin' }
+      ];
+      for (const adm of defaultAdmins) {
+        const existing = await client.query('SELECT id, password_hash FROM users WHERE LOWER(email) = LOWER($1)', [adm.email]);
+        if (!existing.rows[0]) {
+          await client.query(`INSERT INTO users (id, email, name, password_hash, role, status)
+            VALUES ($1, $2, $3, $4, 'admin', 'active')`,
+            [crypto.randomUUID(), adm.email.toLowerCase(), adm.name, hashAdminPass('Admin@12345')]);
+        }
       }
+      console.log('[Database] Default admin accounts verified (admin@daylight.local / admin@example.com).');
     } catch (e) {
       console.warn('[Database] Admin user check notice:', e.message);
+    }
+
+    // 4. Ensure demo users and starter diet plans exist for admin panel
+    try {
+      const planCountRes = await client.query('SELECT COUNT(*) FROM diet_plans');
+      if (parseInt(planCountRes.rows[0].count, 10) === 0) {
+        console.log('[Database] Seeding initial diet plans and demo user profiles...');
+        const crypto = require('crypto');
+        const hashPass = (pwd) => {
+          const salt = crypto.randomBytes(16).toString('hex');
+          return `${salt}:${crypto.scryptSync(pwd, salt, 64).toString('hex')}`;
+        };
+
+        // Ensure demo user exists
+        let userRow = (await client.query("SELECT id FROM users WHERE LOWER(email) = 'user@daylight.local'")).rows[0];
+        if (!userRow) {
+          const uId = crypto.randomUUID();
+          await client.query(`INSERT INTO users (id, email, name, password_hash, role, status)
+            VALUES ($1, 'user@daylight.local', 'Adarsh Patil', $2, 'user', 'active')
+            ON CONFLICT (email) DO NOTHING`,
+            [uId, hashPass('Password123!')]);
+          userRow = { id: uId };
+        }
+        const demoUserId = userRow.id;
+        await client.query(`INSERT INTO profiles (user_id, age, gender, height_cm, weight_kg, target_weight_kg, activity_level, food_preference, weight_goal, allergies, health_conditions)
+          VALUES ($1, 24, 'Male', 174, 68, 65, 'Moderate', 'Vegetarian', 'Maintain', 'None', '')
+          ON CONFLICT (user_id) DO NOTHING`, [demoUserId]);
+
+        // Get admin user for assigned_by
+        const adminRow = (await client.query("SELECT id FROM users WHERE role = 'admin' LIMIT 1")).rows[0];
+        const assignedBy = adminRow ? adminRow.id : demoUserId;
+
+        // Load sample foods
+        const sampleFoodsRes = await client.query("SELECT name, calories, protein, carbohydrates, fat, dietary_type FROM foods LIMIT 15");
+        const sf = sampleFoodsRes.rows.length >= 5 ? sampleFoodsRes.rows : [
+          { name: 'Oats Khichdi', calories: 340, protein: 12, carbohydrates: 54, fat: 8, dietary_type: 'Vegetarian' },
+          { name: 'Paneer Bhurji', calories: 290, protein: 18, carbohydrates: 8, fat: 21, dietary_type: 'Vegetarian' },
+          { name: 'Moong Dal Chilla', calories: 220, protein: 14, carbohydrates: 30, fat: 5, dietary_type: 'Vegetarian' },
+          { name: 'Mixed Sprouts Salad', calories: 150, protein: 9, carbohydrates: 22, fat: 2, dietary_type: 'Vegan' },
+          { name: 'Vegetable Pulao with Curd', calories: 420, protein: 11, carbohydrates: 68, fat: 12, dietary_type: 'Vegetarian' }
+        ];
+
+        const makeSampleDays = (num) => {
+          const daysArr = [];
+          for (let i = 1; i <= num; i++) {
+            const dateStr = new Date(Date.now() + (i - 1) * 86400000).toISOString().slice(0, 10);
+            daysArr.push({
+              day: i,
+              date: dateStr,
+              meals: [
+                { type: 'Breakfast', foods: [{ name: sf[0].name, calories: Number(sf[0].calories), protein: Number(sf[0].protein), carbohydrates: Number(sf[0].carbohydrates), fats: Number(sf[0].fat), portion: 200, dietaryType: sf[0].dietary_type }] },
+                { type: 'Morning Snack', foods: [{ name: sf[1].name, calories: Number(sf[1].calories), protein: Number(sf[1].protein), carbohydrates: Number(sf[1].carbohydrates), fats: Number(sf[1].fat), portion: 150, dietaryType: sf[1].dietary_type }] },
+                { type: 'Lunch', foods: [{ name: sf[4].name, calories: Number(sf[4].calories), protein: Number(sf[4].protein), carbohydrates: Number(sf[4].carbohydrates), fats: Number(sf[4].fat), portion: 300, dietaryType: sf[4].dietary_type }] },
+                { type: 'Evening Snack', foods: [{ name: sf[3].name, calories: Number(sf[3].calories), protein: Number(sf[3].protein), carbohydrates: Number(sf[3].carbohydrates), fats: Number(sf[3].fat), portion: 120, dietaryType: sf[3].dietary_type }] },
+                { type: 'Dinner', foods: [{ name: sf[2].name, calories: Number(sf[2].calories), protein: Number(sf[2].protein), carbohydrates: Number(sf[2].carbohydrates), fats: Number(sf[2].fat), portion: 250, dietaryType: sf[2].dietary_type }] }
+              ]
+            });
+          }
+          return daysArr;
+        };
+
+        const todayStr = new Date().toISOString().slice(0, 10);
+        const next7Str = new Date(Date.now() + 6 * 86400000).toISOString().slice(0, 10);
+        const next14Str = new Date(Date.now() + 13 * 86400000).toISOString().slice(0, 10);
+
+        const days7 = makeSampleDays(7);
+        const days14 = makeSampleDays(14);
+
+        // Plan 1: 7-Day Balanced Indian Maintenance Plan
+        await client.query(`INSERT INTO diet_plans
+          (id, user_id, plan_name, start_date, end_date, number_of_days, weight_goal, food_preference, description, day_date, calorie_target, meals, total_calories, total_protein, total_carbohydrates, total_fat, assigned_by)
+          VALUES ($1, $2, $3, $4::date, $5::date, $6, $7, $8, $9, $4::date, $10, $11, $12, $13, $14, $15, $16)`,
+          [crypto.randomUUID(), demoUserId, '7-Day Balanced Maintenance Plan', todayStr, next7Str, 7, 'Maintain', 'Vegetarian', 'Maintain · Moderate · Vegetarian · 68→65 kg · Target 2000 kcal', 2000, JSON.stringify(days7), 1950, 64, 240, 52, assignedBy]);
+
+        // Plan 2: 14-Day High-Protein Weight Loss Plan
+        await client.query(`INSERT INTO diet_plans
+          (id, user_id, plan_name, start_date, end_date, number_of_days, weight_goal, food_preference, description, day_date, calorie_target, meals, total_calories, total_protein, total_carbohydrates, total_fat, assigned_by)
+          VALUES ($1, $2, $3, $4::date, $5::date, $6, $7, $8, $9, $4::date, $10, $11, $12, $13, $14, $15, $16)`,
+          [crypto.randomUUID(), demoUserId, '14-Day High-Protein Weight Loss Plan', todayStr, next14Str, 14, 'Lose weight', 'Vegetarian', 'Lose weight · Active · Vegetarian · 75→68 kg · Target 1800 kcal', 1800, JSON.stringify(days14), 1780, 82, 195, 46, assignedBy]);
+
+        console.log('[Database] Initial diet plans seeded successfully.');
+      }
+    } catch (e) {
+      console.warn('[Database] Diet plan seeding notice:', e.message);
     }
 
     await client.end();
