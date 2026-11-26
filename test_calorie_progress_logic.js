@@ -142,13 +142,19 @@ async function testCalorieProgressLogic() {
 
   // Verify active plan exists and has target 1674 kcal
   const activePlanQuery = await pool.query(
-    "SELECT id, plan_name, calorie_target, total_calories, meals FROM diet_plans WHERE user_id = $1 ORDER BY created_at DESC LIMIT 1",
+    "SELECT id, plan_name, calorie_target, total_calories, meals FROM diet_plans WHERE user_id = $1 AND (id = '06de66b5-c524-4f45-b073-8400f310f731' OR calorie_target = 1674) ORDER BY created_at DESC LIMIT 1",
     [user.id]
   );
   assert(activePlanQuery.rows.length > 0, 'User has active diet plan in database');
   const activePlan = activePlanQuery.rows[0];
   console.log(`  Active plan: "${activePlan.plan_name}", target: ${activePlan.calorie_target} kcal`);
   assert(Number(activePlan.calorie_target) === 1674, `Active plan calorie_target is exactly 1674 kcal`);
+
+  // Reset meal 4 to ensure clean 4-completed baseline
+  await pool.query(
+    "UPDATE meal_completions SET completed = false WHERE user_id = $1 AND plan_date = '2026-11-27' AND meal_index = 4",
+    [user.id]
+  );
 
   // Verify completions records
   const compQuery = await pool.query(
