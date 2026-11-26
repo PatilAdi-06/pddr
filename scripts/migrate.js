@@ -5,7 +5,11 @@ const { Client } = require('pg');
 
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is required');
-  const client = new Client({ connectionString: process.env.DATABASE_URL });
+  const isLocalDb = process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: isLocalDb ? false : { rejectUnauthorized: false }
+  });
   await client.connect();
   await client.query(fs.readFileSync(path.join(__dirname, '..', 'db', 'schema.sql'), 'utf8'));
   await client.end();

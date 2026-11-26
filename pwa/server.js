@@ -93,9 +93,32 @@ const server = http.createServer((req, res) => {
   });
 });
 
+async function autoMigrate() {
+  if (!process.env.DATABASE_URL) {
+    console.log('[Database] DATABASE_URL is not set. Running without PostgreSQL persistence.');
+    return;
+  }
+  try {
+    const { Client } = require('pg');
+    const isLocalDb = process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
+    const client = new Client({
+      connectionString: process.env.DATABASE_URL,
+      ssl: isLocalDb ? false : { rejectUnauthorized: false }
+    });
+    await client.connect();
+    const schemaSql = fs.readFileSync(path.join(__dirname, '..', 'db', 'schema.sql'), 'utf8');
+    await client.query(schemaSql);
+    await client.end();
+    console.log('[Database] PostgreSQL schema verified and migrated successfully.');
+  } catch (err) {
+    console.error('[Database Auto-Migration Notice]:', err.message);
+  }
+}
+
 server.on('error', (e) => console.error('Server error:', e.message));
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
   console.log(`Daylight Wellness PWA is running at http://localhost:${PORT}`);
+  await autoMigrate();
   if (typeof startReminderScheduler === 'function') {
     startReminderScheduler();
   }

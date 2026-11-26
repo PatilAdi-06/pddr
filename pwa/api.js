@@ -9,7 +9,13 @@ const nodemailer = require('nodemailer');
 const { Pool, types } = require('pg');
 types.setTypeParser(1082, (val) => val);
 
-const pool = process.env.DATABASE_URL ? new Pool({ connectionString: process.env.DATABASE_URL }) : null;
+const isLocalDb = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
+const pool = process.env.DATABASE_URL
+  ? new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: isLocalDb ? false : { rejectUnauthorized: false }
+    })
+  : null;
 if (pool) {
   pool.on('error', (err) => {
     console.error('[PostgreSQL Pool Error (idle client)]:', err.message);
