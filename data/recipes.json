@@ -1,0 +1,3126 @@
+[
+  {
+    "foodName": "Cucumber and yogurt salad (Kheere aur dahi ka salad)",
+    "dishTitle": "Cucumber and Yogurt Salad (Kheere aur Dahi ka Salad)",
+    "category": "Salad",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Mixing",
+    "difficulty": "Easy",
+    "servingSize": "1 portion",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Cucumber",
+        "quantity": "1 medium (150 g)",
+        "baseGrams": 150,
+        "unit": "medium"
+      },
+      {
+        "name": "Plain yogurt",
+        "quantity": "100 g",
+        "baseGrams": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Roasted cumin powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black salt",
+        "quantity": "as required",
+        "baseGrams": 1,
+        "unit": "pinch"
+      },
+      {
+        "name": "Fresh coriander",
+        "quantity": "1 tablespoon",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": "1 teaspoon (optional)",
+        "baseGrams": 5,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Wash the cucumber thoroughly.",
+      "Peel it if required and cut it into small pieces.",
+      "Take plain yogurt in a mixing bowl and whisk until smooth.",
+      "Add cucumber pieces to the yogurt.",
+      "Add roasted cumin powder, black salt, and lemon juice.",
+      "Mix all ingredients properly.",
+      "Garnish with fresh coriander.",
+      "Serve fresh."
+    ],
+    "swaps": [
+      "Mint raita",
+      "Bottle gourd raita",
+      "Sprouted moong salad"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Masala oats & boiled eggs",
+    "dishTitle": "Masala Oats with Boiled Eggs",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 12,
+    "cookingTimeDesc": "12 minutes",
+    "cookingMethod": "Boiling & Sautéing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Rolled oats",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Eggs (hard boiled)",
+        "quantity": "2 large",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "1 small (30 g)",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (chopped)",
+        "quantity": "1 small (40 g)",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Green chilli",
+        "quantity": "1 slit",
+        "baseGrams": 3,
+        "unit": "piece"
+      },
+      {
+        "name": "Turmeric powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cumin seeds",
+        "quantity": "½ teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Olive oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Place eggs in boiling water for 9-10 minutes. Cool in iced water, peel, and slice into halves.",
+      "Heat olive oil in a non-stick pan, add cumin seeds and let them sizzle.",
+      "Add chopped onion and slit green chilli; sauté over medium heat for 2 minutes until translucent.",
+      "Add chopped tomato, turmeric, and salt; cook for 3 minutes until tomato breaks down.",
+      "Pour 1.5 cups of water and bring to a rolling boil.",
+      "Stir in the rolled oats, reduce heat to low, and simmer for 4 minutes until thick and creamy.",
+      "Transfer savory oats to a bowl, top with sliced boiled eggs, and serve warm."
+    ],
+    "swaps": [
+      "Tofu scramble",
+      "Moong chilla",
+      "Paneer bhurji"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Greek yogurt with berries",
+    "dishTitle": "Greek Yogurt with Fresh Berries",
+    "category": "Snack",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Chilling & Mixing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Plain Greek yogurt",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Fresh blueberries & strawberries",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Chia seeds",
+        "quantity": "1 teaspoon (5 g)",
+        "baseGrams": 5,
+        "unit": "g"
+      },
+      {
+        "name": "Cinnamon powder",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Spoon chilled Greek yogurt into a clean breakfast bowl.",
+      "Rinse fresh berries under cold water and pat completely dry with paper towels.",
+      "Slice larger strawberries into quarters.",
+      "Arrange berries over the yogurt surface.",
+      "Scatter chia seeds and dust with a gentle pinch of cinnamon.",
+      "Serve immediately or chill for 10 minutes before enjoying."
+    ],
+    "swaps": [
+      "Curd",
+      "Soy yogurt",
+      "Buttermilk"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Paneer quinoa power bowl",
+    "dishTitle": "Paneer Quinoa Power Bowl",
+    "category": "Lunch",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "cookingTimeDesc": "15 minutes",
+    "cookingMethod": "Boiling & Sautéing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Quinoa (rinsed)",
+        "quantity": "50 g (dry)",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Low-fat paneer (cubed)",
+        "quantity": "100 g",
+        "baseGrams": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Fresh baby spinach",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber (diced)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cherry tomatoes (halved)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Olive oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black pepper & rock salt",
+        "quantity": "to taste",
+        "baseGrams": 2,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Rinse quinoa thoroughly in a fine sieve to remove natural saponin.",
+      "Add quinoa to a pot with 1 cup of water and a pinch of salt; simmer covered for 12-14 minutes until water is absorbed.",
+      "Heat 1 teaspoon olive oil in a skillet over medium heat.",
+      "Add paneer cubes and sear for 2-3 minutes until golden brown on all sides.",
+      "Wash baby spinach, cucumber, and cherry tomatoes.",
+      "In a wide meal bowl, layer the warm fluffy quinoa.",
+      "Arrange seared paneer, fresh spinach leaves, cucumber, and tomatoes side by side.",
+      "Drizzle fresh lemon juice and season with cracked black pepper and salt."
+    ],
+    "swaps": [
+      "Tofu",
+      "Chickpeas",
+      "Brown rice"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Roasted makhana & chai",
+    "dishTitle": "Spiced Roasted Makhana with Fragrant Chai",
+    "category": "Snack",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "cookingTimeDesc": "10 minutes",
+    "cookingMethod": "Roasting & Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 portion",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fox nuts (Phool makhana)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Ghee or olive oil",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Roasted cumin powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chaat masala",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black salt",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      },
+      {
+        "name": "Water",
+        "quantity": "100 ml",
+        "baseGrams": 100,
+        "unit": "ml"
+      },
+      {
+        "name": "Toned milk",
+        "quantity": "100 ml",
+        "baseGrams": 100,
+        "unit": "ml"
+      },
+      {
+        "name": "Tea leaves",
+        "quantity": "1 teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Crushed green cardamom",
+        "quantity": "1 pod",
+        "baseGrams": 1,
+        "unit": "piece"
+      }
+    ],
+    "instructions": [
+      "Heat ghee in a wide heavy kadai over low flame.",
+      "Add makhana and dry-roast continuously for 6-8 minutes until crisp and brittle to the touch.",
+      "Dust roasted cumin powder, chaat masala, and black salt over the warm makhana; toss well to coat.",
+      "In a saucepan, bring water, crushed cardamom, and tea leaves to a boil for 2 minutes.",
+      "Add milk and simmer for 2 minutes until rich and aromatic.",
+      "Strain tea into a cup and serve warm alongside the crunchy spiced makhana."
+    ],
+    "swaps": [
+      "Roasted chickpeas",
+      "Popcorn",
+      "Peanuts"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Dal, roti & seasonal greens",
+    "dishTitle": "Homestyle Dal, Phulka Roti & Seasonal Greens",
+    "category": "Dinner",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 20,
+    "cookingTimeDesc": "20 minutes",
+    "cookingMethod": "Pressure Cooking & Sautéing",
+    "difficulty": "Medium",
+    "servingSize": "1 thali",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Yellow moong dal or toor dal",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Whole wheat flour (atta)",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Fresh seasonal greens (spinach/methi)",
+        "quantity": "100 g",
+        "baseGrams": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "1 small (30 g)",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (chopped)",
+        "quantity": "1 small (40 g)",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Garlic (minced)",
+        "quantity": "3 cloves",
+        "baseGrams": 6,
+        "unit": "cloves"
+      },
+      {
+        "name": "Cumin seeds",
+        "quantity": "½ teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee or oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "baseGrams": 2,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Rinse dal thoroughly and pressure cook with 2 cups water, turmeric, and half teaspoon salt for 3 whistles.",
+      "Knead whole wheat flour with water into a supple dough, divide into 2 balls, roll thin, and roast on a hot tawa until puffed.",
+      "Wash and finely chop the seasonal greens.",
+      "Heat ½ teaspoon oil in a pan, add minced garlic, and sauté chopped greens with a pinch of salt for 4 minutes.",
+      "In a small tadka pan, heat ½ teaspoon ghee, splutter cumin seeds, and fry chopped onion and tomato until soft.",
+      "Pour tadka into the cooked dal, mix well, and simmer for 2 minutes.",
+      "Serve warm tempered dal with fresh hot phulkas and garlic-sautéed greens."
+    ],
+    "swaps": [
+      "Millets",
+      "Brown rice",
+      "Quinoa"
+    ],
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Cheese and chilli sandwich",
+    "dishTitle": "Cheese and Chilli Sandwich",
+    "category": "Breakfast",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "cookingTimeDesc": "5 minutes",
+    "cookingMethod": "Toasting & Grilling",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Cheddar or processed cheese (grated)",
+        "quantity": "35 g",
+        "baseGrams": 35,
+        "unit": "g"
+      },
+      {
+        "name": "Green chillies (finely minced)",
+        "quantity": "1-2 pieces",
+        "baseGrams": 5,
+        "unit": "piece"
+      },
+      {
+        "name": "Bell pepper / capsicum (finely diced)",
+        "quantity": "20 g",
+        "baseGrams": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black pepper",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "In a small bowl, mix grated cheese, minced green chillies, diced capsicum, and black pepper.",
+      "Spread the cheesy chilli mixture evenly over one slice of bread.",
+      "Cover with the second slice and lightly press down.",
+      "Smear half teaspoon butter on the outside bread surface.",
+      "Toast on a medium-hot tawa or sandwich toaster for 2-3 minutes per side until crisp and golden and cheese melts.",
+      "Cut diagonally and serve hot."
+    ],
+    "swaps": [
+      "Paneer bhurji toast",
+      "Tofu chilli toast",
+      "Avocado chilli toast"
+    ],
+    "allergens": [
+      "Dairy",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Cucumber sandwich (Kheere ka sandwich)",
+    "dishTitle": "Cucumber Sandwich (Kheere ka Sandwich)",
+    "category": "Snack",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Assembly & Slicing",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Cucumber (thinly sliced)",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Mint coriander green chutney (vegan)",
+        "quantity": "1 tablespoon",
+        "baseGrams": 15,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Roasted cumin powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chaat masala",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Trim bread crusts if desired, or keep intact for added fiber.",
+      "Spread fresh mint-coriander chutney evenly on one side of each bread slice.",
+      "Wash, peel, and thinly slice the fresh cucumber.",
+      "Layer cucumber rounds closely over the bottom bread slice.",
+      "Sprinkle roasted cumin powder, chaat masala, and a dash of black salt.",
+      "Close with the top bread slice, press gently, and slice diagonally into triangles.",
+      "Serve fresh and crisp."
+    ],
+    "swaps": [
+      "Tomato cucumber toast",
+      "Zucchini sandwich",
+      "Sprouted moong wrap"
+    ],
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Cheese and pineapple sandwich (Cheese aur ananas ka sandwich)",
+    "dishTitle": "Cheese and Pineapple Sandwich",
+    "category": "Lunch",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 4,
+    "cookingTimeDesc": "4 minutes",
+    "cookingMethod": "Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Pineapple slices (finely chopped)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Grated cheese",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cracked black pepper",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Pat the pineapple pieces completely dry using a kitchen towel to prevent soggy bread.",
+      "Combine grated cheese, chopped pineapple, and cracked black pepper in a small bowl.",
+      "Distribute the mixture evenly across one bread slice.",
+      "Top with the other slice and lightly butter the outer sides.",
+      "Toast on a medium pan or grill press for 2 minutes per side until golden brown and cheese is melted.",
+      "Slice in half and serve warm."
+    ],
+    "swaps": [
+      "Cheese apple sandwich",
+      "Paneer pineapple wrap",
+      "Cottage cheese toast"
+    ],
+    "allergens": [
+      "Dairy",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Cheese and tomato sandwich (Cheese aur tamatar ke sandwich)",
+    "dishTitle": "Cheese and Tomato Sandwich",
+    "category": "Snack",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Assembly",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole grain bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Firm ripe tomato (thinly sliced)",
+        "quantity": "1 medium (50 g)",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cheese slice or grated cheese",
+        "quantity": "25 g",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Green chutney or herb spread",
+        "quantity": "1 tablespoon",
+        "baseGrams": 15,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Oregano and black pepper",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Spread green chutney or herb spread evenly over both bread slices.",
+      "Place cheese over the base slice.",
+      "Arrange thin tomato slices neatly over the cheese.",
+      "Season lightly with black pepper, oregano, and salt.",
+      "Cover with the second slice, press gently, and slice into halves.",
+      "Enjoy fresh."
+    ],
+    "swaps": [
+      "Paneer tomato sandwich",
+      "Mozzarella basil toast",
+      "Cucumber tomato sandwich"
+    ],
+    "allergens": [
+      "Dairy",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Peanut and tomato sandwich (Moongfali aur tamatar ka sandwich)",
+    "dishTitle": "Peanut and Tomato Sandwich (Moongfali aur Tamatar ka Sandwich)",
+    "category": "Dinner",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Assembly",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole grain bread",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Natural peanut butter (unsweetened)",
+        "quantity": "1.5 tablespoons (25 g)",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Ripe red tomato (sliced)",
+        "quantity": "1 medium (50 g)",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Fresh basil or coriander leaves",
+        "quantity": "4 leaves",
+        "baseGrams": 2,
+        "unit": "leaves"
+      },
+      {
+        "name": "Freshly ground black pepper & sea salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Lightly toast bread slices if desired for a crisp texture.",
+      "Spread unsweetened peanut butter evenly across one bread slice.",
+      "Arrange fresh ripe tomato slices on top of the peanut butter layer.",
+      "Sprinkle cracked black pepper, a touch of sea salt, and fresh herbs.",
+      "Cap with the remaining bread slice and slice neatly in half.",
+      "Serve immediately."
+    ],
+    "swaps": [
+      "Almond butter sandwich",
+      "Hummus tomato sandwich",
+      "Tahini tomato toast"
+    ],
+    "allergens": [
+      "Peanuts",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Carrot apple sandwich (Gajar aur seb ka sandwich)",
+    "dishTitle": "Carrot Apple Sandwich (Gajar aur Seb ka Sandwich)",
+    "category": "Lunch",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Grated Salad Assembly",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Brown bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Carrot (finely grated)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Crisp red apple (finely grated/thinly sliced)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cracked black pepper & black salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      },
+      {
+        "name": "Mint leaves (shredded)",
+        "quantity": "1 teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Grate carrot and apple into a glass bowl.",
+      "Toss immediately with lemon juice to keep apple fresh and prevent browning.",
+      "Add shredded mint leaves, cracked black pepper, and black salt; mix well.",
+      "Pile the crunchy carrot-apple slaw generously onto a bread slice.",
+      "Cover with the second slice, press softly, and cut in half.",
+      "Serve as a revitalizing vegan lunch or snack."
+    ],
+    "swaps": [
+      "Beetroot apple toast",
+      "Carrot raisin wrap",
+      "Cucumber apple sandwich"
+    ],
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Pea potato sandwich (toasted) (Matar aloo ka sandwich)",
+    "dishTitle": "Toasted Pea and Potato Sandwich (Matar Aloo ka Sandwich)",
+    "category": "Dinner",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 6,
+    "cookingTimeDesc": "6 minutes",
+    "cookingMethod": "Sautéing & Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Boiled potato (mashed)",
+        "quantity": "1 small (50 g)",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Green peas (steamed and crushed)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Mustard oil or vegetable oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cumin powder, amchur & turmeric",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Coriander leaves",
+        "quantity": "1 tablespoon",
+        "baseGrams": 4,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "In a bowl, mix mashed boiled potato, crushed green peas, spices, salt, and fresh coriander.",
+      "Spread the spiced vegetable filling evenly between two bread slices.",
+      "Brush a few drops of oil on the outside of the bread.",
+      "Toast on a hot skillet over medium heat for 3 minutes per side until golden and crunchy.",
+      "Slice into triangles and serve with homemade mint chutney."
+    ],
+    "swaps": [
+      "Sweet potato pea sandwich",
+      "Spiced bean toast",
+      "Mashed chickpea toast"
+    ],
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Pea keema sandwich (toasted) (Matar aur keema ka sandwich)",
+    "dishTitle": "Toasted Green Pea Keema Sandwich",
+    "category": "Lunch",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 8,
+    "cookingTimeDesc": "8 minutes",
+    "cookingMethod": "Sautéing & Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Coarsely minced green peas & soya granules",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Finely chopped onion",
+        "quantity": "20 g",
+        "baseGrams": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Ginger-garlic paste",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Garam masala, coriander powder & chili",
+        "quantity": "½ teaspoon total",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Heat oil in a pan, sauté onion and ginger-garlic paste until aromatic.",
+      "Add crushed peas and soaked minced soya keema with spices and salt.",
+      "Cook for 4-5 minutes until dry and well combined, then cool slightly.",
+      "Place savory plant keema between bread slices.",
+      "Grill or pan-toast with minimal oil until deeply crisp.",
+      "Serve warm."
+    ],
+    "swaps": [
+      "Mushroom keema sandwich",
+      "Paneer bhurji sandwich",
+      "Lentil patty toast"
+    ],
+    "allergens": [
+      "Gluten",
+      "Soy"
+    ]
+  },
+  {
+    "foodName": "Sesame toast",
+    "dishTitle": "Crunchy Sesame Toast",
+    "category": "Breakfast",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 6,
+    "cookingTimeDesc": "6 minutes",
+    "cookingMethod": "Roasting & Grilling",
+    "difficulty": "Easy",
+    "servingSize": "2 slices",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole grain bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "White sesame seeds (til)",
+        "quantity": "2 tablespoons (20 g)",
+        "baseGrams": 20,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Mashed potato or tofu spread",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Sesame oil or olive oil",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chili flakes and salt",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Mix mashed potato or crumbled silken tofu with salt and chili flakes.",
+      "Spread a thin layer over one side of the bread slices to act as a binder.",
+      "Press sesame seeds firmly into the layer so the surface is thoroughly covered.",
+      "Heat oil in a flat pan and place toast seed-side down over medium flame.",
+      "Cook for 3 minutes until sesame seeds turn fragrant and golden, flip and toast reverse side for 2 minutes.",
+      "Serve hot and crunchy."
+    ],
+    "swaps": [
+      "Flaxseed toast",
+      "Chia avocado toast",
+      "Peanut toast"
+    ],
+    "allergens": [
+      "Sesame",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Cracked wheat porridge (Meetha daliya)",
+    "dishTitle": "Cracked Wheat Porridge (Meetha Daliya)",
+    "category": "Breakfast",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 15,
+    "cookingTimeDesc": "15 minutes",
+    "cookingMethod": "Pressure Cooking & Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Broken wheat (Daliya)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Water or almond milk",
+        "quantity": "300 ml",
+        "baseGrams": 300,
+        "unit": "ml"
+      },
+      {
+        "name": "Jaggery powder",
+        "quantity": "1 tablespoon (15 g)",
+        "baseGrams": 15,
+        "unit": "g"
+      },
+      {
+        "name": "Green cardamom powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chopped almonds",
+        "quantity": "1 teaspoon (5 g)",
+        "baseGrams": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Dry roast cracked wheat in a pressure cooker or saucepan for 3-4 minutes until nutty and light brown.",
+      "Pour in water, close the lid, and pressure cook on medium flame for 3 whistles (or simmer 15 mins in pot).",
+      "Release steam naturally and open the cooker.",
+      "Stir in jaggery powder and fragrant cardamom powder over low flame until melted.",
+      "Garnish with slivered almonds and serve warm."
+    ],
+    "swaps": [
+      "Oatmeal Porridge",
+      "Quinoa sweet porridge",
+      "Ragi porridge"
+    ],
+    "allergens": [
+      "Gluten",
+      "Tree nuts"
+    ]
+  },
+  {
+    "foodName": "Semolina porridge (Suji/Rava daliya)",
+    "dishTitle": "Semolina Porridge (Suji / Rava Daliya)",
+    "category": "Breakfast",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 8,
+    "cookingTimeDesc": "8 minutes",
+    "cookingMethod": "Roasting & Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Semolina (Suji/Rava)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Water or oat milk",
+        "quantity": "250 ml",
+        "baseGrams": 250,
+        "unit": "ml"
+      },
+      {
+        "name": "Jaggery or date paste",
+        "quantity": "1 tablespoon (15 g)",
+        "baseGrams": 15,
+        "unit": "g"
+      },
+      {
+        "name": "Cardamom powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Crushed walnuts",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "In a dry saucepan, gently roast suji on low heat for 3 minutes until aromatic.",
+      "Slowly pour water or oat milk while whisking continuously to prevent lumps.",
+      "Cook over low flame for 4-5 minutes until smooth and gently thickened.",
+      "Fold in jaggery and cardamom powder, stirring until uniformly sweet.",
+      "Top with crushed walnuts and enjoy hot."
+    ],
+    "swaps": [
+      "Oatmeal Porridge",
+      "Meetha daliya",
+      "Barnyard millet porridge"
+    ],
+    "allergens": [
+      "Gluten",
+      "Tree nuts"
+    ]
+  },
+  {
+    "foodName": "Oatmeal Porridge",
+    "dishTitle": "Wholesome Oatmeal Porridge",
+    "category": "Breakfast",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 3,
+    "cookTimeMinutes": 6,
+    "cookingTimeDesc": "6 minutes",
+    "cookingMethod": "Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Rolled oats",
+        "quantity": "45 g",
+        "baseGrams": 45,
+        "unit": "g"
+      },
+      {
+        "name": "Water or soy milk",
+        "quantity": "220 ml",
+        "baseGrams": 220,
+        "unit": "ml"
+      },
+      {
+        "name": "Banana (sliced)",
+        "quantity": "½ medium (50 g)",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Ground cinnamon",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Flaxseed powder",
+        "quantity": "1 teaspoon (5 g)",
+        "baseGrams": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Combine rolled oats and water or soy milk in a saucepan.",
+      "Bring to a boil, then turn down heat to medium-low.",
+      "Simmer for 4-5 minutes, stirring frequently until creamy.",
+      "Remove from heat, pour into a breakfast bowl, and arrange fresh banana slices on top.",
+      "Sprinkle cinnamon and ground flaxseed for omega-3 richness."
+    ],
+    "swaps": [
+      "Cracked wheat porridge",
+      "Apple cinnamon oats",
+      "Chia seed pudding"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Rice flakes (Chiwda/Aval)",
+    "dishTitle": "Steamed Rice Flakes Poha (Chiwda / Aval)",
+    "category": "Breakfast",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 7,
+    "cookingTimeDesc": "7 minutes",
+    "cookingMethod": "Steaming & Sautéing",
+    "difficulty": "Easy",
+    "servingSize": "1 plate",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Thick poha (Rice flakes)",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (diced)",
+        "quantity": "1 small (30 g)",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Green chilli & curry leaves",
+        "quantity": "1 chilli + 6 leaves",
+        "baseGrams": 5,
+        "unit": "piece"
+      },
+      {
+        "name": "Mustard seeds & turmeric",
+        "quantity": "½ tsp mustard, ¼ tsp turmeric",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": "1 tablespoon (12 g)",
+        "baseGrams": 12,
+        "unit": "g"
+      },
+      {
+        "name": "Lemon juice & coriander",
+        "quantity": "1 tsp juice + 1 tbsp fresh coriander",
+        "baseGrams": 8,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Oil & salt",
+        "quantity": "1 tsp oil, salt to taste",
+        "baseGrams": 6,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Rinse rice flakes in a colander under running water for 30 seconds; drain completely and rest for 5 minutes.",
+      "Heat oil in a pan, crackle mustard seeds, add curry leaves, green chilli, and diced onion.",
+      "Sauté until onion turns soft and translucent, then add turmeric powder and salt.",
+      "Stir in the softened poha and roasted peanuts gently so flakes do not break.",
+      "Cover with a lid and let steam on lowest heat for 2 minutes.",
+      "Finish with fresh lemon juice and chopped coriander leaves."
+    ],
+    "swaps": [
+      "Oats poha",
+      "Quinoa poha",
+      "Millet flakes upma"
+    ],
+    "allergens": [
+      "Peanuts"
+    ]
+  },
+  {
+    "foodName": "Murmura (Puffed rice)",
+    "dishTitle": "Roasted Masala Murmura (Puffed Rice)",
+    "category": "Snack",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 2,
+    "cookTimeMinutes": 5,
+    "cookingTimeDesc": "5 minutes",
+    "cookingMethod": "Dry Roasting",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Puffed rice (Murmura)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Roasted gram (chana dalia)",
+        "quantity": "15 g",
+        "baseGrams": 15,
+        "unit": "g"
+      },
+      {
+        "name": "Turmeric powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Curry leaves",
+        "quantity": "6-8 leaves",
+        "baseGrams": 2,
+        "unit": "leaves"
+      },
+      {
+        "name": "Oil",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chaat masala & rock salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Heat half teaspoon oil in a large kadai over low flame.",
+      "Add curry leaves, roasted gram, and turmeric powder, letting them sizzle for 30 seconds.",
+      "Add puffed rice and toss continuously for 3-4 minutes until extra crisp.",
+      "Season with rock salt and chaat masala.",
+      "Cool slightly and serve as a light, crunchy tea-time snack."
+    ],
+    "swaps": [
+      "Puffed wheat bhel",
+      "Roasted makhana",
+      "Diet chivda"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Vegetable pancake",
+    "dishTitle": "Savory Vegetable Pancake (Cheela / Uttapam)",
+    "category": "Dinner",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 8,
+    "cookingTimeDesc": "8 minutes",
+    "cookingMethod": "Pan Frying",
+    "difficulty": "Easy",
+    "servingSize": "2 pancakes",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Besan (Gram flour) or oats flour",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Grated carrot & chopped spinach",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "20 g",
+        "baseGrams": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Ajwain (carom seeds) & turmeric",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "80 ml",
+        "baseGrams": 80,
+        "unit": "ml"
+      },
+      {
+        "name": "Oil & salt",
+        "quantity": "1 tsp oil, salt to taste",
+        "baseGrams": 6,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "In a mixing bowl, combine besan, ajwain, turmeric, and salt.",
+      "Gradually whisk in water to make a smooth, pourable batter without lumps.",
+      "Fold in grated carrot, chopped spinach, and finely chopped onion.",
+      "Heat a non-stick tawa, brush lightly with oil, and pour a ladleful of batter, spreading into a round.",
+      "Cook on medium heat for 3-4 minutes until bubbles appear and underside is golden.",
+      "Flip and cook the other side for 2 minutes until cooked through.",
+      "Serve with mint or tomato dip."
+    ],
+    "swaps": [
+      "Moong dal cheela",
+      "Oats pancake",
+      "Suji uttapam"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Sweet Lassi (Meethi lassi)",
+    "dishTitle": "Sweet Lassi (Meethi Lassi)",
+    "category": "Snack",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Whisking & Blending",
+    "difficulty": "Easy",
+    "servingSize": "1 glass",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Thick chilled curd / yogurt",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Cold water or crushed ice",
+        "quantity": "80 ml",
+        "baseGrams": 80,
+        "unit": "ml"
+      },
+      {
+        "name": "Natural raw sugar or honey",
+        "quantity": "1 tablespoon (15 g)",
+        "baseGrams": 15,
+        "unit": "g"
+      },
+      {
+        "name": "Cardamom powder",
+        "quantity": "⅛ teaspoon",
+        "baseGrams": 1,
+        "unit": "pinch"
+      },
+      {
+        "name": "Saffron strands or rose water",
+        "quantity": "a few drops (optional)",
+        "baseGrams": 1,
+        "unit": "drop"
+      }
+    ],
+    "instructions": [
+      "Add fresh chilled curd, cold water, and raw sugar into a blender or traditional madhani pot.",
+      "Blend or churn vigorously for 45-60 seconds until a thick, velvety foam forms on top.",
+      "Add cardamom powder and rose water; give one final quick pulse.",
+      "Pour into a tall clay kulhad or glass, ensuring the rich froth sits on top.",
+      "Serve refreshingly cold."
+    ],
+    "swaps": [
+      "Mango lassi",
+      "Salted lassi",
+      "Almond milk smoothie"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Lassi (salted)",
+    "dishTitle": "Salted Masala Lassi (Namkeen Lassi)",
+    "category": "Snack",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Whisking & Blending",
+    "difficulty": "Easy",
+    "servingSize": "1 glass",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fresh curd (yogurt)",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Chilled water",
+        "quantity": "100 ml",
+        "baseGrams": 100,
+        "unit": "ml"
+      },
+      {
+        "name": "Roasted cumin powder",
+        "quantity": "½ teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black salt (Kala namak)",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Mint leaves (crushed)",
+        "quantity": "4 leaves",
+        "baseGrams": 2,
+        "unit": "leaves"
+      }
+    ],
+    "instructions": [
+      "Combine chilled curd, water, roasted cumin powder, and black salt in a blender.",
+      "Whisk or blend for 1 minute until smooth and frothy.",
+      "Pour into a chilled glass.",
+      "Garnish with crushed fresh mint leaves and a pinch of roasted cumin.",
+      "Serve as an invigorating digestive cooler."
+    ],
+    "swaps": [
+      "Spiced chaas / buttermilk",
+      "Cucumber lassi",
+      "Sweet lassi"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Boiled egg (Ubla anda)",
+    "dishTitle": "Classic Hard Boiled Eggs (Ubla Anda)",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 2,
+    "cookTimeMinutes": 10,
+    "cookingTimeDesc": "10 minutes",
+    "cookingMethod": "Boiling",
+    "difficulty": "Easy",
+    "servingSize": "2 eggs",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fresh whole eggs",
+        "quantity": "2 large (100 g)",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Water",
+        "quantity": "sufficient to submerge eggs",
+        "baseGrams": 300,
+        "unit": "ml"
+      },
+      {
+        "name": "Black pepper powder",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      },
+      {
+        "name": "Rock salt or chaat masala",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Gently place eggs into a small saucepan and cover with cold water by 1 inch.",
+      "Bring water to a rolling boil over medium-high heat.",
+      "Once boiling, turn off heat, cover tightly with a lid, and let stand for 10 minutes.",
+      "Transfer eggs immediately to a bowl filled with iced water for 3 minutes to stop cooking.",
+      "Gently tap and peel shells under running water.",
+      "Slice eggs into halves, season with black pepper and rock salt, and serve."
+    ],
+    "swaps": [
+      "Poached egg",
+      "Egg bhurji",
+      "Paneer bhurji"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Egg sandwich (Ande ka sandwich)",
+    "dishTitle": "Spiced Egg Sandwich (Ande ka Sandwich)",
+    "category": "Lunch",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 6,
+    "cookTimeMinutes": 6,
+    "cookingTimeDesc": "6 minutes",
+    "cookingMethod": "Boiling & Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Boiled egg (mashed or sliced)",
+        "quantity": "1 large (50 g)",
+        "baseGrams": 50,
+        "unit": "egg"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "20 g",
+        "baseGrams": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Green chutney or light mustard",
+        "quantity": "1 tablespoon",
+        "baseGrams": 15,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Black pepper and chaat masala",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Butter or olive oil",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Mash or slice the boiled egg in a bowl and mix with chopped onion, black pepper, and chaat masala.",
+      "Spread green chutney on both bread slices.",
+      "Layer the seasoned egg mixture generously over the bottom slice.",
+      "Top with second bread slice and lightly toast on a griddle with ½ teaspoon butter until golden crisp.",
+      "Cut in half and serve warm."
+    ],
+    "swaps": [
+      "Egg and tomato sandwich",
+      "Paneer sandwich",
+      "Chicken sandwich"
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Chicken sandwich",
+    "dishTitle": "Lean Pulled Chicken Sandwich",
+    "category": "Morning snack",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 12,
+    "cookingTimeDesc": "12 minutes",
+    "cookingMethod": "Poaching & Assembly",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Boneless chicken breast (shredded)",
+        "quantity": "70 g",
+        "baseGrams": 70,
+        "unit": "g"
+      },
+      {
+        "name": "Hung curd or light yogurt spread",
+        "quantity": "1.5 tablespoons (25 g)",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber (thinly sliced)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Black pepper, garlic powder & salt",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh lettuce leaf",
+        "quantity": "1 crisp leaf",
+        "baseGrams": 10,
+        "unit": "leaf"
+      }
+    ],
+    "instructions": [
+      "Poach chicken breast in lightly salted simmering water for 10-12 minutes until cooked through.",
+      "Shred the chicken using two forks and let it cool slightly.",
+      "In a bowl, mix shredded chicken with hung curd, black pepper, garlic powder, and a pinch of salt.",
+      "Place crisp lettuce leaf and sliced cucumber on one bread slice.",
+      "Spoon creamy chicken spread evenly over the greens.",
+      "Cover with second slice, slice diagonally, and enjoy."
+    ],
+    "swaps": [
+      "Chicken sandwich (toasted)",
+      "Egg sandwich",
+      "Paneer sandwich"
+    ],
+    "allergens": [
+      "Gluten",
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Chicken sandwich (toasted)",
+    "dishTitle": "Toasted Spiced Chicken Sandwich",
+    "category": "Lunch",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 6,
+    "cookingTimeDesc": "6 minutes",
+    "cookingMethod": "Pan Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Brown bread",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Cooked spiced chicken mince/shreds",
+        "quantity": "70 g",
+        "baseGrams": 70,
+        "unit": "g"
+      },
+      {
+        "name": "Finely sliced bell pepper & onion",
+        "quantity": "25 g",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Green chutney",
+        "quantity": "1 tablespoon",
+        "baseGrams": 15,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Olive oil",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Spread mint-coriander green chutney on inner sides of both bread slices.",
+      "Layer warm cooked chicken shreds and crunchy sliced peppers on bread.",
+      "Close sandwich and press gently.",
+      "Brush skillet with olive oil, place sandwich, and toast over medium heat for 3 minutes per side until golden brown.",
+      "Serve warm with fresh tomato dip."
+    ],
+    "swaps": [
+      "Chicken salad wrap",
+      "Egg sandwich",
+      "Paneer toast"
+    ],
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Vegetable and mayonnaise sandwich",
+    "dishTitle": "Garden Vegetable and Mayonnaise Sandwich",
+    "category": "Dinner",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 7,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Mixing & Assembly",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole wheat bread slices",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Light mayonnaise (egg-based)",
+        "quantity": "1.5 tablespoons (25 g)",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Grated carrot & diced cucumber",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Sweet corn kernels (steamed)",
+        "quantity": "20 g",
+        "baseGrams": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Black pepper powder & salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "In a salad bowl, blend light mayonnaise with grated carrot, cucumber, and sweet corn.",
+      "Season with freshly ground black pepper and a touch of salt.",
+      "Spread the chilled vegetable mayonnaise mixture thickly between two slices of whole wheat bread.",
+      "Trim edges if preferred and cut diagonally into finger sandwiches.",
+      "Serve fresh and crisp."
+    ],
+    "swaps": [
+      "Hung curd vegetable sandwich",
+      "Egg salad sandwich",
+      "Chicken mayo sandwich"
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Egg and tomato sandwich (Ande aur tamatar ka sandwich)",
+    "dishTitle": "Egg and Tomato Sandwich (Ande aur Tamatar ka Sandwich)",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "cookingTimeDesc": "5 minutes",
+    "cookingMethod": "Slicing & Toasting",
+    "difficulty": "Easy",
+    "servingSize": "1 sandwich",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Multigrain bread",
+        "quantity": "2 slices (60 g)",
+        "baseGrams": 60,
+        "unit": "slices"
+      },
+      {
+        "name": "Boiled egg (sliced)",
+        "quantity": "1 egg (50 g)",
+        "baseGrams": 50,
+        "unit": "egg"
+      },
+      {
+        "name": "Ripe tomato (sliced)",
+        "quantity": "1 small (40 g)",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Dijon or homemade green mustard",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cracked pepper & sea salt",
+        "quantity": "a pinch",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Lightly toast multigrain bread slices.",
+      "Spread mustard or chutney across both slices.",
+      "Alternate layers of sliced boiled egg and juicy red tomato rounds.",
+      "Season with freshly cracked black pepper and sea salt.",
+      "Top with the second slice, slice across, and serve immediately."
+    ],
+    "swaps": [
+      "Egg sandwich",
+      "Tomato mozzarella toast",
+      "Boiled egg salad"
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten"
+    ]
+  },
+  {
+    "foodName": "Scrambled egg (Ande ki bhurji)",
+    "dishTitle": "Indian Style Scrambled Eggs (Ande ki Bhurji)",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 7,
+    "cookingTimeDesc": "7 minutes",
+    "cookingMethod": "Sautéing & Scrambling",
+    "difficulty": "Easy",
+    "servingSize": "1 plate",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whole eggs",
+        "quantity": "2 large",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "1 small (30 g)",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (finely chopped)",
+        "quantity": "1 small (30 g)",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Green chilli (minced)",
+        "quantity": "1 piece",
+        "baseGrams": 3,
+        "unit": "piece"
+      },
+      {
+        "name": "Turmeric & red chili powder",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Oil or butter",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh coriander & salt",
+        "quantity": "to taste",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "Crack eggs into a bowl, add a pinch of salt, and beat lightly with a fork.",
+      "Heat oil in a frying pan over medium heat; sauté chopped onion and green chilli until golden.",
+      "Add chopped tomato, turmeric, and chili powder; sauté for 2 minutes until softened.",
+      "Lower the flame and pour in the beaten eggs.",
+      "Stir gently and continuously for 2-3 minutes as soft curds form; do not overcook.",
+      "Garnish with chopped fresh coriander leaves and serve warm with roti or toast."
+    ],
+    "swaps": [
+      "Paneer bhurji",
+      "Tofu scramble",
+      "Boiled eggs"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Poached egg",
+    "dishTitle": "Classic Poached Eggs",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 2,
+    "cookTimeMinutes": 4,
+    "cookingTimeDesc": "4 minutes",
+    "cookingMethod": "Poaching",
+    "difficulty": "Easy",
+    "servingSize": "2 eggs",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fresh farm eggs",
+        "quantity": "2 large",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Water",
+        "quantity": "1 liter",
+        "baseGrams": 1000,
+        "unit": "ml"
+      },
+      {
+        "name": "White vinegar",
+        "quantity": "1 tablespoon",
+        "baseGrams": 15,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Black pepper & flaky sea salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Fill a deep pan with water, add vinegar, and bring to a gentle, steady simmer (not a rolling boil).",
+      "Crack one cold egg into a small ramekin or teacup.",
+      "Swirl the simmering water with a spoon to create a gentle whirlpool in the center.",
+      "Carefully drop the egg into the whirlpool eye; the swirling water wraps whites around the yolk.",
+      "Poach gently for 3-4 minutes until whites are firm and yolk remains softly liquid.",
+      "Lift with a slotted spoon, blot on paper towel, season with pepper and salt, and serve on toast."
+    ],
+    "swaps": [
+      "Boiled egg",
+      "Sunny side up egg",
+      "Steamed egg"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Fried Egg",
+    "dishTitle": "Sunny-Side-Up Fried Eggs",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 2,
+    "cookTimeMinutes": 3,
+    "cookingTimeDesc": "3 minutes",
+    "cookingMethod": "Pan Frying",
+    "difficulty": "Easy",
+    "servingSize": "2 eggs",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "quantity": "2 large",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Olive oil or butter",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Freshly ground black pepper",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Rock salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Warm oil or butter in a non-stick skillet over medium-low heat.",
+      "Carefully crack eggs directly into the pan without breaking the yolks.",
+      "Cook for 2-3 minutes until the whites are fully set and edges turn slightly golden.",
+      "Spoon a little warm oil over whites if needed to finish setting.",
+      "Slide onto a plate, dust with sea salt and cracked black pepper, and serve warm."
+    ],
+    "swaps": [
+      "Poached egg",
+      "Scrambled egg",
+      "Omelette"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Stuffed egg omelette/omlet",
+    "dishTitle": "Herb & Mushroom Stuffed Egg Omelette",
+    "category": "Breakfast",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "cookingTimeDesc": "5 minutes",
+    "cookingMethod": "Pan Frying & Folding",
+    "difficulty": "Easy",
+    "servingSize": "1 omelette",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "quantity": "2 large",
+        "baseGrams": 100,
+        "unit": "eggs"
+      },
+      {
+        "name": "Button mushrooms (finely sliced)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Spinach & onion",
+        "quantity": "20 g each",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Olive oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt, oregano and black pepper",
+        "quantity": "to taste",
+        "baseGrams": 2,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "In a small skillet, sauté sliced mushrooms, onion, and spinach with a pinch of salt for 2 minutes; set aside.",
+      "Whisk eggs in a bowl with salt, black pepper, and oregano until slightly bubbly.",
+      "Heat oil in an 8-inch non-stick skillet over medium-low flame.",
+      "Pour beaten eggs into skillet and tilt pan so it spreads into an even round.",
+      "When eggs are almost set on top, spoon the warm mushroom-spinach filling onto one half.",
+      "Gently fold the other half over the filling into a neat semicircle.",
+      "Cook for 30 seconds more and slide onto a warm plate."
+    ],
+    "swaps": [
+      "Cheese omelette",
+      "Paneer bhurji",
+      "Vegetable egg scramble"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Chicken salad",
+    "dishTitle": "Tender Grilled Chicken Garden Salad",
+    "category": "Lunch",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 10,
+    "cookingTimeDesc": "10 minutes",
+    "cookingMethod": "Grilling & Tossing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Chicken breast (cubed)",
+        "quantity": "90 g",
+        "baseGrams": 90,
+        "unit": "g"
+      },
+      {
+        "name": "Mixed salad greens (lettuce, rocket)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber & cherry tomatoes",
+        "quantity": "40 g each",
+        "baseGrams": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Extra virgin olive oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Lemon juice or balsamic vinegar",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Dried oregano, black pepper & salt",
+        "quantity": "to taste",
+        "baseGrams": 2,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Season chicken cubes with olive oil, oregano, black pepper, and salt.",
+      "Sear on a hot grill pan or skillet for 4-5 minutes per side until charred and cooked through.",
+      "Wash salad greens, cucumber, and cherry tomatoes in ice-cold water, then spin dry.",
+      "Assemble chilled greens in a large bowl and top with warm grilled chicken.",
+      "Drizzle lemon juice and freshly cracked black pepper.",
+      "Toss lightly and serve fresh."
+    ],
+    "swaps": [
+      "Paneer quinoa power bowl",
+      "Sprouted moong salad",
+      "Egg salad"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Chicken sweet corn soup",
+    "dishTitle": "Hearty Chicken Sweet Corn Soup",
+    "category": "Dinner",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 12,
+    "cookingTimeDesc": "12 minutes",
+    "cookingMethod": "Simmering & Boiling",
+    "difficulty": "Easy",
+    "servingSize": "1 large bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Minced chicken or shredded breast",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Sweet corn (creamed & kernels)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Clear chicken broth or water",
+        "quantity": "350 ml",
+        "baseGrams": 350,
+        "unit": "ml"
+      },
+      {
+        "name": "Egg white",
+        "quantity": "1 egg white",
+        "baseGrams": 30,
+        "unit": "egg white"
+      },
+      {
+        "name": "Cornstarch (dissolved in 2 tbsp water)",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger (minced) & spring onion",
+        "quantity": "1 tsp ginger, 1 tbsp spring onion",
+        "baseGrams": 10,
+        "unit": "g"
+      },
+      {
+        "name": "White pepper & salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "In a soup pot, bring chicken broth, minced ginger, and sweet corn to a boil.",
+      "Add minced chicken and simmer for 5-6 minutes until chicken is tender.",
+      "Stir the cornstarch slurry and slowly pour into the simmering soup, stirring until thickened.",
+      "Turn down flame and slowly drizzle the beaten egg white in a thin stream while gently stirring to create delicate silky ribbons.",
+      "Season with salt and white pepper.",
+      "Ladle into bowls, sprinkle chopped spring onion greens, and serve hot."
+    ],
+    "swaps": [
+      "Chicken consomme",
+      "Tomato basil soup",
+      "Vegetable sweet corn soup"
+    ],
+    "allergens": [
+      "Eggs"
+    ]
+  },
+  {
+    "foodName": "Egg nog",
+    "dishTitle": "Spiced Protein Egg Nog",
+    "category": "Snack",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "cookingTimeDesc": "5 minutes",
+    "cookingMethod": "Simmering & Whisking",
+    "difficulty": "Easy",
+    "servingSize": "1 glass",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Pasteurized egg yolk",
+        "quantity": "1 egg yolk",
+        "baseGrams": 20,
+        "unit": "yolk"
+      },
+      {
+        "name": "Low-fat milk",
+        "quantity": "200 ml",
+        "baseGrams": 200,
+        "unit": "ml"
+      },
+      {
+        "name": "Jaggery or pure honey",
+        "quantity": "1 tablespoon (15 g)",
+        "baseGrams": 15,
+        "unit": "g"
+      },
+      {
+        "name": "Ground nutmeg and cinnamon",
+        "quantity": "¼ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Vanilla extract",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      }
+    ],
+    "instructions": [
+      "Warm milk in a small saucepan over low heat until steam gently rises (do not boil).",
+      "In a bowl, whisk egg yolk with jaggery and vanilla until pale and creamy.",
+      "Gradually pour 3 tablespoons of warm milk into the yolk while whisking briskly to temper.",
+      "Pour tempered yolk mixture back into the saucepan with remaining milk.",
+      "Cook over lowest heat for 3-4 minutes while stirring constantly until mixture lightly coats a spoon.",
+      "Pour into a mug, dust freshly grated nutmeg and cinnamon on top, and enjoy warm or chilled."
+    ],
+    "swaps": [
+      "Turmeric golden milk",
+      "Badam milk",
+      "Cinnamon protein shake"
+    ],
+    "allergens": [
+      "Eggs",
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Cucumber raita (Kheere ka raita)",
+    "dishTitle": "Refreshing Cucumber Raita (Kheere ka Raita)",
+    "category": "Salad",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Whisking & Chilling",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fresh plain curd (yogurt)",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber (finely grated)",
+        "quantity": "80 g",
+        "baseGrams": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Roasted cumin powder (Bhuna jeera)",
+        "quantity": "½ teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black salt",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh mint or coriander (chopped)",
+        "quantity": "1 tablespoon",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "Grate fresh cucumber and gently squeeze out excess water with your palms.",
+      "Whisk plain yogurt in a mixing bowl until silky smooth.",
+      "Fold the grated cucumber into the whipped yogurt.",
+      "Add roasted cumin powder, black salt, and finely chopped mint leaves.",
+      "Mix thoroughly, chill in refrigerator for 10 minutes, and serve cold."
+    ],
+    "swaps": [
+      "Tomato onion raita",
+      "Boondi raita",
+      "Spinach raita"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Tomato onion raita (Tamatar aur pyaaz ka raita)",
+    "dishTitle": "Tomato Onion Raita (Tamatar aur Pyaaz ka Raita)",
+    "category": "Salad",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Whisking & Mixing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Whisked fresh curd",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Red onion (finely diced)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Ripe tomato (finely diced)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Green chilli (finely minced)",
+        "quantity": "½ piece",
+        "baseGrams": 2,
+        "unit": "piece"
+      },
+      {
+        "name": "Roasted cumin & black salt",
+        "quantity": "½ teaspoon total",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Coriander leaves",
+        "quantity": "1 tablespoon",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "Whisk yogurt until creamy and lump-free.",
+      "Add finely diced onion, tomato, and minced green chilli.",
+      "Stir in roasted cumin powder and black salt.",
+      "Garnish with fresh coriander leaves.",
+      "Serve chilled alongside rice, pulao, or roti."
+    ],
+    "swaps": [
+      "Cucumber raita",
+      "Mint raita",
+      "Kachumber salad"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Sprouted moong salad",
+    "dishTitle": "Sprouted Moong Salad",
+    "category": "Salad",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Tossing & Mixing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Sprouted green moong beans",
+        "quantity": "80 g",
+        "baseGrams": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber (diced)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (diced)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Pomegranate arils",
+        "quantity": "2 tablespoons (25 g)",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Fresh lemon juice",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Chaat masala & black salt",
+        "quantity": "½ teaspoon total",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Coriander leaves",
+        "quantity": "1 tablespoon",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "Optionally steam sprouted moong for 2 minutes or use fresh raw sprouts for maximum crunch.",
+      "In a wide mixing bowl, combine sprouted moong, diced cucumber, and tomato.",
+      "Add bright pomegranate arils and chopped fresh coriander.",
+      "Drizzle freshly squeezed lemon juice over the mixture.",
+      "Season with chaat masala and black salt, toss lightly, and serve."
+    ],
+    "swaps": [
+      "Mixed pulse salad",
+      "Chana chaat",
+      "Cucumber salad"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Mixed pulse and vegetable salad",
+    "dishTitle": "Mixed Pulse and Vegetable Salad",
+    "category": "Salad",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Tossing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Cooked mixed pulses (chana, rajma, moong)",
+        "quantity": "80 g",
+        "baseGrams": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Bell peppers (capsicum, diced)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber & carrot (diced)",
+        "quantity": "40 g total",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Lemon juice & olive oil",
+        "quantity": "1 tsp each",
+        "baseGrams": 10,
+        "unit": "tsp"
+      },
+      {
+        "name": "Roasted cumin, black pepper & salt",
+        "quantity": "to taste",
+        "baseGrams": 2,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "In a large bowl, place cooked, drained, room-temperature pulses.",
+      "Add diced bell peppers, crunchy carrots, and fresh cucumber.",
+      "Whisk lemon juice, olive oil, roasted cumin, black pepper, and salt in a cup.",
+      "Pour dressing over pulses and vegetables; toss gently until evenly coated.",
+      "Serve as a protein-dense vegan meal or side."
+    ],
+    "swaps": [
+      "Sprouted moong salad",
+      "Chickpea salad",
+      "Tossed green salad"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Tossed green salad",
+    "dishTitle": "Crisp Tossed Green Salad",
+    "category": "Salad",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 8,
+    "cookTimeMinutes": 0,
+    "cookingTimeDesc": "No cooking required",
+    "cookingMethod": "Tossing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Romaine lettuce or spinach leaves",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cucumber (sliced)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Radish & carrot (thinly sliced)",
+        "quantity": "30 g total",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Extra virgin olive oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Black pepper & rock salt",
+        "quantity": "to taste",
+        "baseGrams": 1,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Immerse green leaves in ice-cold water for 5 minutes, then dry thoroughly in a spinner.",
+      "Tear greens into bite-sized pieces and arrange in a wide salad bowl.",
+      "Scatter sliced cucumber, radish rounds, and julienned carrots.",
+      "Drizzle extra virgin olive oil and fresh lemon juice over the top.",
+      "Season with freshly cracked black pepper and rock salt, toss lightly, and serve at once."
+    ],
+    "swaps": [
+      "Cucumber tomato salad",
+      "Kachumber salad",
+      "Kale salad"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Dal fry",
+    "dishTitle": "Homestyle Yellow Dal Fry",
+    "category": "Dinner",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "cookingTimeDesc": "20 minutes",
+    "cookingMethod": "Pressure Cooking & Sautéing",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Toor dal or Moong dal",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (chopped)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Ginger-garlic paste",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee or vegetable oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Cumin seeds & mustard seeds",
+        "quantity": "½ teaspoon each",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric, red chili & coriander powder",
+        "quantity": "¼ tsp each",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh coriander & salt",
+        "quantity": "to taste",
+        "baseGrams": 5,
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      "Rinse dal thoroughly and pressure cook with 2 cups water, turmeric, and salt for 3 whistles.",
+      "Heat ghee or oil in a pan, crackle cumin and mustard seeds.",
+      "Add chopped onion and ginger-garlic paste, sautéing until fragrant and light golden.",
+      "Add chopped tomatoes and ground spices; cook until oil separates and tomatoes turn mushy.",
+      "Pour cooked dal into the tempering pan, add a little water if too thick, and simmer for 3 minutes.",
+      "Garnish generously with fresh coriander leaves and serve warm."
+    ],
+    "swaps": [
+      "Moong dal",
+      "Dal tadka",
+      "Chana dal"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Moong dal",
+    "dishTitle": "Light Moong Dal Soup / Curry",
+    "category": "Dinner",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 18,
+    "cookingTimeDesc": "18 minutes",
+    "cookingMethod": "Boiling & Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Yellow split moong dal",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (chopped)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Cumin seeds",
+        "quantity": "½ teaspoon",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Grated ginger",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Water & salt",
+        "quantity": "2.5 cups water, salt to taste",
+        "baseGrams": 500,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      "Wash moong dal until water runs clear.",
+      "Simmer dal in a pot with water, turmeric, grated ginger, and salt for 15 minutes until soft.",
+      "In a small pan, heat 1 teaspoon oil and splutter cumin seeds.",
+      "Add chopped tomato and cook for 2 minutes until soft.",
+      "Pour the fragrant tomato cumin tadka directly into the simmering moong dal.",
+      "Simmer together for 2 minutes, garnish with fresh coriander, and serve."
+    ],
+    "swaps": [
+      "Masoor dal",
+      "Dal fry",
+      "Moong soup"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Palak paneer",
+    "dishTitle": "Nutritious Palak Paneer",
+    "category": "Dinner",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "cookingTimeDesc": "15 minutes",
+    "cookingMethod": "Blanching & Sautéing",
+    "difficulty": "Medium",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Fresh spinach leaves (Palak)",
+        "quantity": "150 g",
+        "baseGrams": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Paneer (cubed)",
+        "quantity": "80 g",
+        "baseGrams": 80,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "30 g",
+        "baseGrams": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (pureed)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Garlic (minced) & ginger",
+        "quantity": "1 tsp each",
+        "baseGrams": 8,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee or oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Garam masala, cumin & salt",
+        "quantity": "to taste",
+        "baseGrams": 3,
+        "unit": "pinch"
+      }
+    ],
+    "instructions": [
+      "Blanch washed spinach leaves in boiling water for 2 minutes, then immediately transfer to ice water to retain vibrant green color.",
+      "Blend blanched spinach with green chilli into a smooth puree.",
+      "Heat ghee in a pan, add cumin seeds, minced garlic, ginger, and onion; sauté until translucent.",
+      "Add tomato puree, salt, and spices; cook until oil releases.",
+      "Pour in bright green spinach puree and simmer gently for 3-4 minutes.",
+      "Gently fold in fresh paneer cubes and warm through for 2 minutes.",
+      "Serve warm with phulkas or brown rice."
+    ],
+    "swaps": [
+      "Palak tofu",
+      "Methi paneer",
+      "Paneer bhurji"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Moong dal khichdi",
+    "dishTitle": "Comforting Moong Dal Khichdi",
+    "category": "Dinner",
+    "dietaryType": "Vegetarian",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 18,
+    "cookingTimeDesc": "18 minutes",
+    "cookingMethod": "One-Pot Pressure Cooking",
+    "difficulty": "Easy",
+    "servingSize": "1 plate",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Rice (brown or white)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Yellow moong dal",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Cumin seeds & black peppercorns",
+        "quantity": "½ tsp cumin, 3 peppercorns",
+        "baseGrams": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric powder",
+        "quantity": "¼ teaspoon",
+        "baseGrams": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger (grated)",
+        "quantity": "½ teaspoon",
+        "baseGrams": 3,
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee or oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Water & rock salt",
+        "quantity": "3 cups water, salt to taste",
+        "baseGrams": 600,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      "Rinse rice and moong dal together until water runs clear; soak for 15 minutes.",
+      "Heat ghee in a pressure cooker, splutter cumin seeds and black peppercorns.",
+      "Add grated ginger and turmeric powder, sautéing for 20 seconds.",
+      "Add drained rice and dal, stirring for 1 minute to coat with ghee and spices.",
+      "Pour in 3 cups of water and salt; close cooker lid.",
+      "Cook for 4 whistles on medium heat, then allow steam to subside naturally.",
+      "Open and stir lightly into a creamy comforting consistency; serve warm with curd."
+    ],
+    "swaps": [
+      "Quinoa khichdi",
+      "Oats khichdi",
+      "Daliya khichdi"
+    ],
+    "allergens": [
+      "Dairy"
+    ]
+  },
+  {
+    "foodName": "Vegetable pulao",
+    "dishTitle": "Aromatic Vegetable Pulao",
+    "category": "Lunch",
+    "dietaryType": "Vegan",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "cookingTimeDesc": "20 minutes",
+    "cookingMethod": "Steaming & Simmering",
+    "difficulty": "Easy",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Basmati rice (soaked 20 mins)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Mixed vegetables (peas, carrots, beans)",
+        "quantity": "60 g",
+        "baseGrams": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Whole spices (bay leaf, clove, cinnamon)",
+        "quantity": "1 each",
+        "baseGrams": 2,
+        "unit": "spices"
+      },
+      {
+        "name": "Onion (thinly sliced)",
+        "quantity": "25 g",
+        "baseGrams": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Oil",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Water & salt",
+        "quantity": "1 cup water, salt to taste",
+        "baseGrams": 200,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      "Heat oil in a heavy-bottomed pot, add whole spices until fragrant.",
+      "Add sliced onion and sauté until golden brown.",
+      "Toss in mixed diced vegetables and sauté for 2 minutes.",
+      "Add drained basmati rice and gently stir for 1 minute without breaking grains.",
+      "Pour 1 cup hot water and salt; bring to a rolling boil.",
+      "Cover tightly, turn heat to lowest setting, and cook undisturbed for 12 minutes.",
+      "Rest for 5 minutes off heat, fluff gently with a fork, and serve."
+    ],
+    "swaps": [
+      "Brown rice pulao",
+      "Quinoa pulao",
+      "Moong dal khichdi"
+    ],
+    "allergens": []
+  },
+  {
+    "foodName": "Chicken curry",
+    "dishTitle": "Homestyle Spiced Chicken Curry",
+    "category": "Dinner",
+    "dietaryType": "Non-Vegetarian",
+    "prepTimeMinutes": 12,
+    "cookTimeMinutes": 22,
+    "cookingTimeDesc": "22 minutes",
+    "cookingMethod": "Sautéing & Simmering",
+    "difficulty": "Medium",
+    "servingSize": "1 bowl",
+    "baseServingGrams": 100,
+    "ingredients": [
+      {
+        "name": "Skinless chicken (cut into pieces)",
+        "quantity": "120 g",
+        "baseGrams": 120,
+        "unit": "g"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "40 g",
+        "baseGrams": 40,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato (pureed)",
+        "quantity": "50 g",
+        "baseGrams": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Ginger-garlic paste",
+        "quantity": "1 teaspoon",
+        "baseGrams": 5,
+        "unit": "tsp"
+      },
+      {
+        "name": "Mustard oil or olive oil",
+        "quantity": "1.5 teaspoons",
+        "baseGrams": 7,
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric, coriander, cumin & red chili powder",
+        "quantity": "¼ tsp each",
+        "baseGrams": 4,
+        "unit": "tsp"
+      },
+      {
+        "name": "Garam masala & fresh coriander",
+        "quantity": "¼ tsp garam masala, 1 tbsp coriander",
+        "baseGrams": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Heat oil in a heavy pot, add whole cumin seeds and let them sizzle.",
+      "Add finely chopped onions and sauté over medium heat until deep golden brown.",
+      "Stir in ginger-garlic paste and cook for 1 minute until raw aroma dissipates.",
+      "Add pureed tomato and ground spices; cook until oil begins to separate from the masala.",
+      "Add chicken pieces and sear in the masala for 4-5 minutes until sealed.",
+      "Pour in ½ cup warm water, cover with lid, and simmer over low heat for 12-14 minutes until chicken is tender and juicy.",
+      "Sprinkle garam masala and fresh coriander, stir, and serve with rotis or steamed rice."
+    ],
+    "swaps": [
+      "Chicken salad",
+      "Egg curry",
+      "Fish curry"
+    ],
+    "allergens": []
+  }
+]
