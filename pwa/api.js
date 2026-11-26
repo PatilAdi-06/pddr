@@ -10,22 +10,44 @@ const { Pool, types } = require('pg');
 types.setTypeParser(1082, (val) => val);
 
 function getDbConfig() {
-  const connectionString = process.env.DATABASE_URL
-    || process.env.POSTGRES_URL
-    || process.env.DATABASE_PUBLIC_URL
-    || (process.env.PGHOST && process.env.PGUSER && process.env.PGDATABASE
-        ? `postgresql://${encodeURIComponent(process.env.PGUSER)}${process.env.PGPASSWORD ? `:${encodeURIComponent(process.env.PGPASSWORD)}` : ''}@${process.env.PGHOST}:${process.env.PGPORT || 5432}/${process.env.PGDATABASE}`
-        : null);
+  const isCloud = !!(process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJECT_ID || process.env.RENDER || process.env.FLY_APP_NAME);
+  
+  const candidates = [
+    process.env.DATABASE_URL,
+    process.env.POSTGRES_URL,
+    process.env.DATABASE_PUBLIC_URL
+  ].filter(Boolean);
 
-  if (!connectionString) return null;
+  if (process.env.PGHOST && process.env.PGUSER && process.env.PGDATABASE) {
+    const user = encodeURIComponent(process.env.PGUSER);
+    const pass = process.env.PGPASSWORD ? `:${encodeURIComponent(process.env.PGPASSWORD)}` : '';
+    const host = process.env.PGHOST;
+    const port = process.env.PGPORT || 5432;
+    const db = process.env.PGDATABASE;
+    candidates.push(`postgresql://${user}${pass}@${host}:${port}/${db}`);
+  }
 
-  const isNoSsl = connectionString.includes('localhost')
-    || connectionString.includes('127.0.0.1')
-    || connectionString.includes('railway.internal')
-    || connectionString.includes('sslmode=disable');
+  let chosen = null;
+  if (isCloud) {
+    chosen = candidates.find(url => !url.includes('localhost') && !url.includes('127.0.0.1'));
+    if (!chosen && candidates.some(url => url.includes('localhost'))) {
+      console.warn('[Cloud Database Warning] Detected DATABASE_URL set to localhost while running on Railway/Cloud! In Railway, change DATABASE_URL to ${{Postgres.DATABASE_URL}}.');
+    }
+  }
+
+  if (!chosen && candidates.length > 0) {
+    chosen = candidates[0];
+  }
+
+  if (!chosen) return null;
+
+  const isNoSsl = chosen.includes('localhost')
+    || chosen.includes('127.0.0.1')
+    || chosen.includes('railway.internal')
+    || chosen.includes('sslmode=disable');
 
   return {
-    connectionString,
+    connectionString: chosen,
     ssl: isNoSsl ? false : { rejectUnauthorized: false }
   };
 }
