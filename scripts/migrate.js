@@ -4,11 +4,22 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const { Client } = require('pg');
 
 async function main() {
-  if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is required');
-  const isLocalDb = process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
+  const connectionString = process.env.DATABASE_URL
+    || process.env.POSTGRES_URL
+    || process.env.DATABASE_PUBLIC_URL
+    || (process.env.PGHOST && process.env.PGUSER && process.env.PGDATABASE
+        ? `postgresql://${encodeURIComponent(process.env.PGUSER)}${process.env.PGPASSWORD ? `:${encodeURIComponent(process.env.PGPASSWORD)}` : ''}@${process.env.PGHOST}:${process.env.PGPORT || 5432}/${process.env.PGDATABASE}`
+        : null);
+
+  if (!connectionString) throw new Error('DATABASE_URL or POSTGRES_URL is required');
+  const isNoSsl = connectionString.includes('localhost')
+    || connectionString.includes('127.0.0.1')
+    || connectionString.includes('railway.internal')
+    || connectionString.includes('sslmode=disable');
+
   const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: isLocalDb ? false : { rejectUnauthorized: false }
+    connectionString,
+    ssl: isNoSsl ? false : { rejectUnauthorized: false }
   });
   await client.connect();
   await client.query(fs.readFileSync(path.join(__dirname, '..', 'db', 'schema.sql'), 'utf8'));

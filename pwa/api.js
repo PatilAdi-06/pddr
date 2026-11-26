@@ -9,13 +9,32 @@ const nodemailer = require('nodemailer');
 const { Pool, types } = require('pg');
 types.setTypeParser(1082, (val) => val);
 
-const isLocalDb = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
-const pool = process.env.DATABASE_URL
-  ? new Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: isLocalDb ? false : { rejectUnauthorized: false }
-    })
-  : null;
+function getDbConfig() {
+  const connectionString = process.env.DATABASE_URL
+    || process.env.POSTGRES_URL
+    || process.env.DATABASE_PUBLIC_URL
+    || (process.env.PGHOST && process.env.PGUSER && process.env.PGDATABASE
+        ? `postgresql://${encodeURIComponent(process.env.PGUSER)}${process.env.PGPASSWORD ? `:${encodeURIComponent(process.env.PGPASSWORD)}` : ''}@${process.env.PGHOST}:${process.env.PGPORT || 5432}/${process.env.PGDATABASE}`
+        : null);
+
+  if (!connectionString) return null;
+
+  const isNoSsl = connectionString.includes('localhost')
+    || connectionString.includes('127.0.0.1')
+    || connectionString.includes('railway.internal')
+    || connectionString.includes('sslmode=disable');
+
+  return {
+    connectionString,
+    ssl: isNoSsl ? false : { rejectUnauthorized: false }
+  };
+}
+
+const dbConfig = getDbConfig();
+if (dbConfig && !process.env.DATABASE_URL) {
+  process.env.DATABASE_URL = dbConfig.connectionString;
+}
+const pool = dbConfig ? new Pool(dbConfig) : null;
 if (pool) {
   pool.on('error', (err) => {
     console.error('[PostgreSQL Pool Error (idle client)]:', err.message);

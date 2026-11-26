@@ -93,31 +93,108 @@ const server = http.createServer((req, res) => {
   });
 });
 
+function getDbConfig() {
+  const connectionString = process.env.DATABASE_URL
+    || process.env.POSTGRES_URL
+    || process.env.DATABASE_PUBLIC_URL
+    || (process.env.PGHOST && process.env.PGUSER && process.env.PGDATABASE
+        ? `postgresql://${encodeURIComponent(process.env.PGUSER)}${process.env.PGPASSWORD ? `:${encodeURIComponent(process.env.PGPASSWORD)}` : ''}@${process.env.PGHOST}:${process.env.PGPORT || 5432}/${process.env.PGDATABASE}`
+        : null);
+
+  if (!connectionString) return null;
+
+  const isNoSsl = connectionString.includes('localhost')
+    || connectionString.includes('127.0.0.1')
+    || connectionString.includes('railway.internal')
+    || connectionString.includes('sslmode=disable');
+
+  return {
+    connectionString,
+    ssl: isNoSsl ? false : { rejectUnauthorized: false }
+  };
+}
+
 async function autoMigrate() {
-  if (!process.env.DATABASE_URL) {
-    console.log('[Database] DATABASE_URL is not set. Running without PostgreSQL persistence.');
+  const dbConfig = getDbConfig();
+  if (!dbConfig) {
+    console.log('[Database] No PostgreSQL connection string found. Running in local/offline fallback mode.');
     return;
   }
+  process.env.DATABASE_URL = dbConfig.connectionString;
   try {
     const { Client } = require('pg');
-    const isLocalDb = process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
-    const client = new Client({
-      connectionString: process.env.DATABASE_URL,
-      ssl: isLocalDb ? false : { rejectUnauthorized: false }
-    });
+    const client = new Client(dbConfig);
     await client.connect();
+
+    // 1. Run schema migration
     const schemaSql = fs.readFileSync(path.join(__dirname, '..', 'db', 'schema.sql'), 'utf8');
     await client.query(schemaSql);
-    await client.end();
     console.log('[Database] PostgreSQL schema verified and migrated successfully.');
+
+    // 2. Check if food dataset needs initial seeding
+    try {
+      const foodCountRes = await client.query('SELECT COUNT(*) FROM foods');
+      if (parseInt(foodCountRes.rows[0].count, 10) === 0) {
+        console.log('[Database] Seeding initial Indian Food Nutrition dataset...');
+        const csvPath = path.join(__dirname, '..', 'data', 'Indian_Food_Nutrition_Processed.csv');
+        if (fs.existsSync(csvPath)) {
+          const csvText = fs.readFileSync(csvPath, 'utf8');
+          const lines = csvText.trim().split(/\r?\n/).slice(1);
+          for (const line of lines) {
+            const cells = []; let value = ''; let quoted = false;
+            for (const char of line) {
+              if (char === '"') quoted = !quoted;
+              else if (char === ',' && !quoted) { cells.push(value.trim()); value = ''; }
+              else value += char;
+            }
+            cells.push(value.trim());
+            if (!cells[0]) continue;
+            const name = cells[0].replace(/^"|"$/g, '');
+            const cal = Number(cells[1]) || 0;
+            const carb = Number(cells[2]) || 0;
+            const prot = Number(cells[3]) || 0;
+            const fat = Number(cells[4]) || 0;
+            const sugar = cells[5] && Number.isFinite(Number(cells[5])) ? Number(cells[5]) : null;
+            const fibre = Number(cells[6]) || 0;
+            const sodium = cells[7] && Number.isFinite(Number(cells[7])) ? Number(cells[7]) : null;
+            const dType = /chicken|mutton|fish|meat|egg/i.test(name) ? 'Non-Vegetarian' : (/milk|paneer|curd|cheese|ghee|butter/i.test(name) ? 'Vegetarian' : 'Vegan');
+            await client.query(`INSERT INTO foods (name, calories, carbohydrates, protein, fat, free_sugar_g, fibre, sodium_mg, dietary_type)
+              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT (name) DO NOTHING`,
+              [name, cal, carb, prot, fat, sugar, fibre, sodium, dType]);
+          }
+          console.log('[Database] Indian Food Nutrition dataset seeded successfully.');
+        }
+      }
+    } catch (e) {
+      console.warn('[Database] Food seeding notice:', e.message);
+    }
+
+    // 3. Ensure default admin user exists
+    try {
+      const adminCount = await client.query("SELECT COUNT(*) FROM users WHERE role = 'admin'");
+      if (parseInt(adminCount.rows[0].count, 10) === 0) {
+        const crypto = require('crypto');
+        const salt = crypto.randomBytes(16).toString('hex');
+        const hash = `${salt}:${crypto.scryptSync('Password123!', salt, 64).toString('hex')}`;
+        await client.query(`INSERT INTO users (id, email, name, password_hash, role, status)
+          VALUES ($1, $2, $3, $4, 'admin', 'active')
+          ON CONFLICT (email) DO NOTHING`,
+          [crypto.randomUUID(), 'admin@daylight.local', 'Daylight Admin', hash]);
+        console.log('[Database] Default admin account initialized: admin@daylight.local / Password123!');
+      }
+    } catch (e) {
+      console.warn('[Database] Admin user check notice:', e.message);
+    }
+
+    await client.end();
   } catch (err) {
     console.error('[Database Auto-Migration Notice]:', err.message);
   }
 }
 
 server.on('error', (e) => console.error('Server error:', e.message));
-server.listen(PORT, async () => {
-  console.log(`Daylight Wellness PWA is running at http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', async () => {
+  console.log(`Daylight Wellness PWA is running on 0.0.0.0:${PORT}`);
   await autoMigrate();
   if (typeof startReminderScheduler === 'function') {
     startReminderScheduler();
